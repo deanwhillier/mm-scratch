@@ -1,0 +1,25 @@
+#MenuContainer {
+    .MenuItem {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        position: relative;
+    }
+    .MenuItem_button {
+        border-radius: 0;
+        
+        &::before,
+        &::after {
+            border-radius: 0;
+        }
+        
+        .Button_icon {
+            color: color(--center-channel-color-rgb, 0.48);
+        }
+        .Button_label {
+            margin: 0 12px;
+            font-weight: 400;
+            text-align: left;
+        }
+    }
+}

@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    width: 100vw;
+    height: 100vh;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+
+    &.poc {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: white;
+
+        > * + * {
+            margin-top: 10px;
+        }
+
+        &-label {
+            .Label.poc-label-long {
+                max-width: 200px;
+            }
+        }
+
+        &-menu {
+            background-color: silver;
+        }
+    }
+}
+
+@import './variables';
+
+@import '../shared/typography';
+@import '../shared/mattermost-icons';
+
+@import "./icon";
+@import "./label";
+@import "./button";
+@import "./icon-button";
+@import "./menu-container";
+@import "./menu-header";
+@import "./menu";
+@import "./menu-item";

@@ -1,0 +1,15 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Icon Component
+        link(rel="stylesheet" type="text/css" href="/build/css/menu/main.css")
+    body(class=["poc", "poc-icon", "enable-animations"])
+        include components/_icon
+
+        +icon({glyph: "icon-emoticon-happy-outline", size: "xsmall", label: "Icon"})
+        +icon({glyph: "icon-emoticon-happy-outline", size: "small", label: "Icon"})
+        +icon({glyph: "icon-emoticon-happy-outline", size: "standard", label: "Icon"})
+        +icon({glyph: "icon-emoticon-happy-outline", size: "large", label: "Icon"})
+        +icon({glyph: "icon-emoticon-happy-outline", size: "xlarge", label: "Icon"})
