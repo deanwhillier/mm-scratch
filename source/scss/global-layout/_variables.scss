@@ -1,0 +1,33 @@
+// breakpoints
+$breakpoint-mobile-max: 599px;
+$breakpoint-tablet-max: 899px;
+$breakpoint-small-desktop-max: 1199px;
+$breakpoint-medium-desktop-max: 1679px;
+$breakpoint-large-desktop-min: 1600px;
+
+// variables
+:root {
+    // animation
+    --animation-length-shortest: 100ms;
+    --animation-length-shorter: 150ms;
+    --animation-length-short: 200ms;
+    --animation-length: 300ms;
+    --animation-length-long: 400ms;
+    --animation-length-longer: 450ms;
+    --animation-length-longest: 500ms;
+    // fixed dimensions
+    --global-banner-height: 40px;
+    --global-header-height: 40px;
+    --team-sidebar-width: 64px;
+    --lhs-sidebar-width: 240px;
+    --panel-corner-radius: 12px;
+    // colour
+    --global-banner-color-background: #f74343;
+    --global-header-color-background: #14213e;
+    --sidebar-lhs-color-background: #1e325c;
+    --main-color-background: white;
+    --sidebar-team-color-background: #192a4d;
+    // elevations
+    --shadow-elevation-1: 0px 2px 3px rgba(0, 0, 0, 0.08);
+    --shadow-elevation-2: 0px 4px 6px rgba(0, 0, 0, 0.12);
+}

@@ -14,6 +14,7 @@
         display: flex;
         align-items: flex-end;
         flex-shrink: 0;
+        padding-top: 48px;
         width: 200%;
     }
 
@@ -25,13 +26,6 @@
             margin: 8px 0;
         }
 
-        // there shouldn't be a back button in the first menu's header
-        &:first-child {
-            .MenuHeader_backButton {
-                visibility: hidden;
-            }
-        }
-
         // only show primary menu and sub menu
         &:nth-child(n+3) {
             display: none;
@@ -39,7 +33,17 @@
     }
 
     .Menu_header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+
+        .MenuHeader_backButton {
+            opacity: 1;
+            visibility: visible;
+        }
         .MenuHeader_closeButton {
+            opacity: 0;
             visibility: hidden;
         }
     }
@@ -73,21 +77,24 @@
         .Menu {
             height: 100% !important;
         }
-        .Menu_panels {
-            padding-top: 48px;
-        }
         .Menu_panels,
         .Menu_panel {
             height: 100%;
         }
         .Menu_header {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100vw;
 
             .MenuHeader_closeButton {
+                opacity: 1;
                 visibility: visible;
+            }
+        }
+    }
+
+    .Menu[data-active-menu-depth="1"] {
+        .Menu_header {
+            .MenuHeader_backButton {
+                opacity: 0;
+                visibility: hidden;
             }
         }
     }

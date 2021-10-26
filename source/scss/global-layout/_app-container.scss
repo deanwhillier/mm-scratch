@@ -1,0 +1,6 @@
+.AppContainer {
+    @include flex-column;
+    @include flex-dynamic;
+
+    position: relative;
+}

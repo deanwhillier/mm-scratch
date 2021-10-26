@@ -1,0 +1,31 @@
+#LHS {
+    @include flex-column;
+    @include flex-dynamic;
+    @include size(var(--lhs-sidebar-width), 100%);
+
+    @include panel-background(
+        var(--sidebar-team-color-background),
+        var(--sidebar-lhs-color-background)
+    );
+
+    #root:not(.Teams--open) & {
+        @include panel-background(
+            var(--global-header-color-background),
+            var(--sidebar-lhs-color-background)
+        );
+        &::before {
+            border-bottom-left-radius: 0px;
+        }
+    }
+
+    @media screen and (max-width: $breakpoint-mobile-max) {
+    }
+    @media screen and (max-width: $breakpoint-tablet-max) {
+    }
+    @media screen and (max-width: $breakpoint-small-desktop-max) {
+    }
+    @media screen and (max-width: $breakpoint-medium-desktop-max) {
+    }
+    @media screen and (min-width: $breakpoint-large-desktop-min) {
+    }
+}

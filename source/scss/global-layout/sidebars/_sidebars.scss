@@ -1,0 +1,39 @@
+.Sidebars {
+    @media screen and (max-width: $breakpoint-mobile-max) {
+    }
+    @media screen and (max-width: $breakpoint-tablet-max) {
+        @include flex-row;
+        @include flex-fixed;
+        @include size(max-content, auto);
+
+        // animation
+        transition: transform var(--animation-length-short) 0s ease-in-out;
+
+        > .Sidebar {
+            transition: width var(--animation-length-short) 0s ease-in-out,
+                visibility var(--animation-length-short) 0s step-end,
+                color var(--animation-length-short) 0s ease-in-out;
+
+            &.open {
+                transition: width var(--animation-length-short) 0s ease-in-out,
+                    visibility var(--animation-length-short) 0s step-start,
+                    color var(--animation-length-short) 0s ease-in-out;
+            }
+
+            &::before {
+                transition: color var(--animation-length-short) 0s ease-in-out,
+                    border-radius var(--animation-length-short) 0s ease-in-out;
+            }
+        }
+    }
+    @media screen and (max-width: $breakpoint-small-desktop-max) {
+    }
+    @media screen and (max-width: $breakpoint-medium-desktop-max) {
+    }
+    @media screen and (min-width: $breakpoint-large-desktop-min) {
+    }
+}
+
+@import './sidebar-teams';
+@import './sidebar-lhs';
+@import './sidebar-apps';

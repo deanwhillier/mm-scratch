@@ -1,0 +1,176 @@
+// resets
+
+* {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    background: white;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    background: white;
+    min-width: 320px;
+}
+
+h1 {
+    font-family: Metropolis,sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;    margin: 0;
+    padding: 0;
+}
+
+button {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    text-align: inherit;
+    outline: none;
+    line-height: inherit;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+// utilities
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 18px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+    
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+    
+    &.md-18 { font-size: 18px; }
+    &.md-24 { font-size: 24px; }
+    &.md-36 { font-size: 36px; }
+    &.md-48 { font-size: 48px; }
+}
+
+
+// component styles
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    padding: 0 8px;
+    background: hsl(240, 100%, 25%);
+    max-width: 100%;
+    
+    span {
+        display: block;
+        flex: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    
+    &:hover {
+        background: hsl(240, 50%, 40%);
+    }
+}
+.icon-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: silver;
+    border-radius: 100%;
+    padding: 5px;
+    background: hsl(240, 50%, 40%);
+    
+    i {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20px;
+        height: 20px;
+    }
+    
+    &:hover {
+        background: hsl(240, 40%, 50%);
+    }
+}
+
+// container styles
+
+main {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: white;
+}
+
+.sidebar__left {
+    background: hsl(240, 100%, 25%);
+    width: 320px;
+    height: 100%;
+    padding: 16px;
+    
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        .MenuWrapper {
+            max-width: calc(100% - 34px);
+            
+            > * + * {
+                margin-left: 4px;
+            }
+        }
+    }
+    
+    h1 {
+        
+    }
+    
+    .team-menu-button {
+        max-width: 100%;
+        flex: 1;
+        
+        > * + * {
+            margin-left: 4px;
+        }
+    }
+    
+    .header-actions-button {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+// test
+
+button.button {
+}

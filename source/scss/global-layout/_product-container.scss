@@ -1,0 +1,4 @@
+.ProductContainer {
+    @include flex-row;
+    @include flex-dynamic;
+}

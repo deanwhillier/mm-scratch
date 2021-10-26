@@ -1,0 +1,173 @@
+* {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+    width: 100vw;
+    height: 100vh;
+    font-size: 10px;
+    background: white;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    width: 100vw;
+    height: 100vh;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    background: white;
+    min-width: 320px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 200px;
+    height: 100px;
+    background: silver;
+    
+    &::before {
+        position: absolute;
+        bottom: 100%;
+        content: "Placeholder";
+        text-transform: uppercase;
+        width: 100%;
+    }
+    
+    &::after {
+        content: "Placeholder";
+        text-transform: uppercase;
+    }
+    
+    &.size {
+        &::before,
+        &::after {
+            content: "size";
+        }
+    }
+    
+    &.orientation {
+        &::before,
+        &::after {
+            content: "orientation";
+        }
+    }
+    
+    &.hover {
+        &::before,
+        &::after {
+            content: "hover";
+        }
+    }
+    
+    &.pointer {
+        &::before,
+        &::after {
+            content: "pointer";
+        }
+    }
+    
+    @media screen and (max-width: 960px) {
+        &.size {
+            &::after {
+                content: "tablet";
+            }
+        }
+    }
+    
+    @media screen and (max-width: 768px) {
+        &.size {
+            &::after {
+                content: "mobile";
+            }
+        }
+    }
+    
+    @media screen and (min-width: 961px) {
+        &.size {
+            &::after {
+                content: "small desktop";
+            }
+        }
+    }
+    
+    @media screen and (min-width: 1681px) {
+        &.size {
+            &::after {
+                content: "desktop";
+            }
+        }
+    }
+    
+    @media screen and (orientation: portrait) {
+        &.orientation {
+            &::after {
+                content: "portrait";
+            }
+        }
+    }
+    
+    @media screen and (orientation: landscape) {
+        &.orientation {
+            &::after {
+                content: "landscape";
+            }
+        }
+    }
+    
+    @media screen and  (hover: none) {
+        &.hover {
+            &::after {
+                content: "none";
+            }
+        }
+    }
+    
+    @media screen and  (hover: hover) {
+        &.hover {
+            &::after {
+                content: "hover";
+            }
+        }
+    }
+    
+    @media screen and  (pointer: none) {
+        &.pointer {
+            &::after {
+                content: "none";
+            }
+        }
+    }
+    
+    @media screen and  (pointer: coarse) {
+        &.pointer {
+            &::after {
+                content: "coarse";
+            }
+        }
+    }
+    
+    @media screen and  (pointer: fine) {
+        &.pointer {
+            &::after {
+                content: "fine";
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+#root {
+    @include flex-column;
+
+    &:not(.GlobalBanner--open) {
+        --global-banner-height: 0px;
+    }
+
+    &:not(.Teams--open) {
+        --team-sidebar-width: 0px;
+    }
+
+    // debug
+    background: var(--global-header-color-background);
+}

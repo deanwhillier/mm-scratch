@@ -1,0 +1,7 @@
+#GlobalHeader {
+    @include flex-row;
+    @include flex-fixed;
+    @include size(100%, var(--global-header-height));
+
+    background: var(--global-header-color-background);
+}

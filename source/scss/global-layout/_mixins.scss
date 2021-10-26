@@ -1,0 +1,68 @@
+// mixins
+@mixin panel-background(
+    $background-color,
+    $foreground-color,
+    $shadow: var(--shadow-elevation-1),
+    $top: false
+) {
+    position: relative;
+    background: $background-color;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: $foreground-color;
+        box-shadow: $shadow;
+
+        @if $top == true {
+            border-radius: var(--panel-corner-radius) var(--panel-corner-radius) 0 0;
+        } @else {
+            border-radius: var(--panel-corner-radius) 0 0 var(--panel-corner-radius);
+        }
+    }
+}
+
+@mixin flex-row {
+    display: flex;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flex-fixed {
+    flex: 0 0 auto;
+}
+
+@mixin flex-dynamic {
+    flex: 1 1 auto;
+}
+
+@mixin size($width: auto, $height: auto) {
+    width: $width;
+    height: $height;
+}
+
+@mixin collapsed {
+    visibility: hidden;
+
+    &.open {
+        visibility: visible;
+    }
+}
+
+@mixin position($x: 0, $y: 0, $fromRight: false) {
+    position: absolute;
+    top: $y;
+
+    @if $fromRight {
+        right: $x;
+    } @else {
+        left: $x;
+    }
+}

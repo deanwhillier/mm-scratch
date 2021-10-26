@@ -1,0 +1,19 @@
+.Toast {
+    @include flex-row;
+    @include flex-fixed;
+    @include size(100%, var(--global-banner-height));
+    @include collapsed;
+
+    background: var(--global-banner-color-background);
+}
+
+// animation
+.Toast {
+    transition: height var(--animation-length-shorter) 0s ease-in-out,
+        visibility var(--animation-length-shorter) 0s step-end;
+
+    &.open {
+        transition: height var(--animation-length-shorter) 0s ease-in-out,
+            visibility var(--animation-length-shorter) 0s step-start;
+    }
+}

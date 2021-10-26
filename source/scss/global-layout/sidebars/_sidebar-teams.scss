@@ -1,0 +1,26 @@
+.Sidebar__teams {
+    @include flex-column;
+    @include flex-fixed;
+    @include size(var(--team-sidebar-width), 100%);
+    @include collapsed;
+
+    @include panel-background(
+        var(--global-header-color-background),
+        var(--sidebar-team-color-background)
+    );
+
+    &::before {
+        border-bottom-left-radius: 0px;
+    }
+
+    @media screen and (max-width: $breakpoint-mobile-max) {
+    }
+    @media screen and (max-width: $breakpoint-tablet-max) {
+    }
+    @media screen and (max-width: $breakpoint-small-desktop-max) {
+    }
+    @media screen and (max-width: $breakpoint-medium-desktop-max) {
+    }
+    @media screen and (min-width: $breakpoint-large-desktop-min) {
+    }
+}

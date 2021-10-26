@@ -1,0 +1,31 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Global Layout
+        link(rel="stylesheet" type="text/css" href="https://yarnpkg.com/en/package/normalize.css")
+        link(rel="stylesheet" type="text/css" href="/build/css/global-layout/main.css")
+    body.global-layout.enable-animations
+        div#root.Teams--open
+            div#GlobalBanner.Toast
+            div.AppContainer
+                header#GlobalHeader
+                    nav.LeftControlsContainer
+                    div.CenterControlsContainer
+                    div.RightControlsContainer
+                section.ProductContainer
+                    div.Sidebars.Sidebars__left
+                        section#Teams.Sidebar.Sidebar__teams.open
+                        section#LHS.Sidebar.Sidebar__left
+                    div.Panels
+                        main#Main.Panel.Panel__main.active
+                            header
+                            section
+                        section#RHS.Panel.Panel__rhs
+                            header
+                            section
+                    div.Sidebars.Sidebars__right
+                        section#AppsBar.Sidebar.Sidebar__apps
+        
+        script(src="/build/js/global-layout/main-min.js" type="text/javascript")

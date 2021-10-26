@@ -1,0 +1,27 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+    font-size: 10px;
+    background: var(--global-header-color-background);
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.6rem;
+    background: var(--global-header-color-background);
+}
+
+html,
+body,
+#root {
+    @include size(100%, 100%);
+
+    margin: 0;
+    padding: 0;
+}
