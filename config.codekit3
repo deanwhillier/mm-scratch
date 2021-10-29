@@ -9,19 +9,78 @@
   ],
   "creatorBuild" : "34214",
   "files" : {
-    "\/.nova\/Configuration.json" : {
-      "ft" : 524288,
+    "\/.gitignore" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
       "oA" : 1,
-      "oAP" : "\/build\/.nova\/Configuration-min.json",
-      "oF" : 0,
-      "oO" : 0,
-      "oS" : 1
+      "oAP" : "\/build\/.gitignore",
+      "oF" : 1
+    },
+    "\/.nova" : {
+      "ft" : 65536,
+      "oA" : 1,
+      "oAP" : "\/build\/.nova",
+      "oF" : 0
     },
     "\/build" : {
       "ft" : 65536,
       "oA" : 1,
       "oAP" : "\/build\/build",
       "oF" : 0
+    },
+    "\/node_modules" : {
+      "ft" : 65536,
+      "oA" : 2,
+      "oAP" : "\/build\/node_modules",
+      "oF" : 0
+    },
+    "\/node_modules\/@mattermost\/compass-icons\/css\/compass-icons.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/build\/node_modules\/@mattermost\/compass-icons\/css\/compass-icons-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
+    "\/package-lock.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/build\/package-lock-min.json",
+      "oF" : 0,
+      "oO" : 0,
+      "oS" : 1
+    },
+    "\/package.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/build\/package-min.json",
+      "oF" : 0,
+      "oO" : 0,
+      "oS" : 1
+    },
+    "\/README.md" : {
+      "cB" : 0,
+      "cS" : 0,
+      "eF" : 1,
+      "eL" : 1,
+      "ema" : 1,
+      "eSQ" : 1,
+      "ft" : 4096,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/build\/README.html",
+      "oF" : 1,
+      "oFM" : 0,
+      "oS" : 0,
+      "pHT" : 0,
+      "pME" : 1,
+      "rFN" : 0,
+      "uCM" : 0
     },
     "\/source\/assets\/fonts\/mattermosticons\/mattermosticons.eot" : {
       "cB" : 0,
@@ -65,265 +124,103 @@
       "oAP" : "\/build\/assets\/fonts\/mattermosticons\/mattermosticons.woff2",
       "oF" : 0
     },
-    "\/source\/assets\/fonts\/Metropolis-Regular.otf" : {
+    "\/source\/assets\/fonts\/Metropolis-Light.woff" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/build\/assets\/fonts\/Metropolis-Regular.otf",
+      "oAP" : "\/build\/assets\/fonts\/Metropolis-Light.woff",
       "oF" : 0
     },
-    "\/source\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-300.eot" : {
+    "\/source\/assets\/fonts\/Metropolis-LightItalic.woff" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/build\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-300.eot",
+      "oAP" : "\/build\/assets\/fonts\/Metropolis-LightItalic.woff",
       "oF" : 0
     },
-    "\/source\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-300.svg" : {
-      "ft" : 2097152,
-      "miP" : 0,
-      "oA" : 2,
-      "oAP" : "\/build\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-300.svg",
+    "\/source\/assets\/fonts\/Metropolis-Regular.woff" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/assets\/fonts\/Metropolis-Regular.woff",
+      "oF" : 0
+    },
+    "\/source\/assets\/fonts\/Metropolis-RegularItalic.woff" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/assets\/fonts\/Metropolis-RegularItalic.woff",
+      "oF" : 0
+    },
+    "\/source\/assets\/fonts\/Metropolis-SemiBold.woff" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/assets\/fonts\/Metropolis-SemiBold.woff",
+      "oF" : 0
+    },
+    "\/source\/assets\/fonts\/Metropolis-SemiBoldItalic.woff" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/assets\/fonts\/Metropolis-SemiBoldItalic.woff",
+      "oF" : 0
+    },
+    "\/source\/components\/_button.pug" : {
+      "cB" : 0,
+      "cOD" : 1,
+      "ft" : 512,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/build\/components\/_button.html",
       "oF" : 0,
-      "opt" : 0,
-      "plM" : 52780316221407,
-      "prP" : 0
+      "oS" : 0
     },
-    "\/source\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-300.ttf" : {
+    "\/source\/components\/_heading.pug" : {
       "cB" : 0,
-      "ft" : 8192,
+      "cOD" : 1,
+      "ft" : 512,
       "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/build\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-300.ttf",
-      "oF" : 0
-    },
-    "\/source\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-300.woff" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/build\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-300.woff",
-      "oF" : 0
-    },
-    "\/source\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-300.woff2" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/build\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-300.woff2",
-      "oF" : 0
-    },
-    "\/source\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-300italic.eot" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/build\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-300italic.eot",
-      "oF" : 0
-    },
-    "\/source\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-300italic.svg" : {
-      "ft" : 2097152,
-      "miP" : 0,
-      "oA" : 2,
-      "oAP" : "\/build\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-300italic.svg",
+      "oA" : 1,
+      "oAP" : "\/build\/components\/_heading.html",
       "oF" : 0,
-      "opt" : 0,
-      "plM" : 52780316221407,
-      "prP" : 0
+      "oS" : 0
     },
-    "\/source\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-300italic.ttf" : {
+    "\/source\/components\/_icon-button.pug" : {
       "cB" : 0,
-      "ft" : 8192,
+      "cOD" : 1,
+      "ft" : 512,
       "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/build\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-300italic.ttf",
-      "oF" : 0
-    },
-    "\/source\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-300italic.woff" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/build\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-300italic.woff",
-      "oF" : 0
-    },
-    "\/source\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-300italic.woff2" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/build\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-300italic.woff2",
-      "oF" : 0
-    },
-    "\/source\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-600.eot" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/build\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-600.eot",
-      "oF" : 0
-    },
-    "\/source\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-600.svg" : {
-      "ft" : 2097152,
-      "miP" : 0,
-      "oA" : 2,
-      "oAP" : "\/build\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-600.svg",
+      "oA" : 1,
+      "oAP" : "\/build\/components\/_icon-button.html",
       "oF" : 0,
-      "opt" : 0,
-      "plM" : 52780316221407,
-      "prP" : 0
+      "oS" : 0
     },
-    "\/source\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-600.ttf" : {
+    "\/source\/components\/_icon.pug" : {
       "cB" : 0,
-      "ft" : 8192,
+      "cOD" : 1,
+      "ft" : 512,
       "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/build\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-600.ttf",
-      "oF" : 0
-    },
-    "\/source\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-600.woff" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/build\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-600.woff",
-      "oF" : 0
-    },
-    "\/source\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-600.woff2" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/build\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-600.woff2",
-      "oF" : 0
-    },
-    "\/source\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-600italic.eot" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/build\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-600italic.eot",
-      "oF" : 0
-    },
-    "\/source\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-600italic.svg" : {
-      "ft" : 2097152,
-      "miP" : 0,
-      "oA" : 2,
-      "oAP" : "\/build\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-600italic.svg",
+      "oA" : 1,
+      "oAP" : "\/build\/components\/_icon.html",
       "oF" : 0,
-      "opt" : 0,
-      "plM" : 52780316221407,
-      "prP" : 0
+      "oS" : 0
     },
-    "\/source\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-600italic.ttf" : {
+    "\/source\/components\/_label.pug" : {
       "cB" : 0,
-      "ft" : 8192,
+      "cOD" : 1,
+      "ft" : 512,
       "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/build\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-600italic.ttf",
-      "oF" : 0
-    },
-    "\/source\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-600italic.woff" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/build\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-600italic.woff",
-      "oF" : 0
-    },
-    "\/source\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-600italic.woff2" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/build\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-600italic.woff2",
-      "oF" : 0
-    },
-    "\/source\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-italic.eot" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/build\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-italic.eot",
-      "oF" : 0
-    },
-    "\/source\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-italic.svg" : {
-      "ft" : 2097152,
-      "miP" : 0,
-      "oA" : 2,
-      "oAP" : "\/build\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-italic.svg",
+      "oA" : 1,
+      "oAP" : "\/build\/components\/_label.html",
       "oF" : 0,
-      "opt" : 0,
-      "plM" : 52780316221407,
-      "prP" : 0
-    },
-    "\/source\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-italic.ttf" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/build\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-italic.ttf",
-      "oF" : 0
-    },
-    "\/source\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-italic.woff" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/build\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-italic.woff",
-      "oF" : 0
-    },
-    "\/source\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-italic.woff2" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/build\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-italic.woff2",
-      "oF" : 0
-    },
-    "\/source\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-regular.eot" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/build\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-regular.eot",
-      "oF" : 0
-    },
-    "\/source\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-regular.svg" : {
-      "ft" : 2097152,
-      "miP" : 0,
-      "oA" : 2,
-      "oAP" : "\/build\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-regular.svg",
-      "oF" : 0,
-      "opt" : 0,
-      "plM" : 52780316221407,
-      "prP" : 0
-    },
-    "\/source\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-regular.ttf" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/build\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-regular.ttf",
-      "oF" : 0
-    },
-    "\/source\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-regular.woff" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/build\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-regular.woff",
-      "oF" : 0
-    },
-    "\/source\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-regular.woff2" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/build\/assets\/fonts\/open-sans-v13-latin-ext_latin_cyrillic-ext_greek-ext_greek_cyrillic_vietnamese-regular.woff2",
-      "oF" : 0
+      "oS" : 0
     },
     "\/source\/csb-badges\/index.kit" : {
       "cB" : 0,
@@ -593,6 +490,96 @@
       "oAP" : "\/build\/p-animated-reaction\/index.html",
       "oF" : 0
     },
+    "\/source\/scss\/components\/_button.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 1,
+      "oAP" : "\/build\/css\/components\/_button.css",
+      "oF" : 0,
+      "oS" : 1,
+      "pg" : 0,
+      "sct" : 1
+    },
+    "\/source\/scss\/components\/_heading.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 1,
+      "oAP" : "\/build\/css\/components\/_heading.css",
+      "oF" : 0,
+      "oS" : 1,
+      "pg" : 0,
+      "sct" : 1
+    },
+    "\/source\/scss\/components\/_icon-button.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 1,
+      "oAP" : "\/build\/css\/components\/_icon-button.css",
+      "oF" : 0,
+      "oS" : 1,
+      "pg" : 0,
+      "sct" : 1
+    },
+    "\/source\/scss\/components\/_icon.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 1,
+      "oAP" : "\/build\/css\/components\/_icon.css",
+      "oF" : 0,
+      "oS" : 1,
+      "pg" : 0,
+      "sct" : 1
+    },
+    "\/source\/scss\/components\/_label.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 1,
+      "oAP" : "\/build\/css\/components\/_label.css",
+      "oF" : 0,
+      "oS" : 1,
+      "pg" : 0,
+      "sct" : 1
+    },
+    "\/source\/scss\/components\/_variables.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 1,
+      "oAP" : "\/build\/css\/components\/_variables.css",
+      "oF" : 0,
+      "oS" : 1,
+      "pg" : 0,
+      "sct" : 1
+    },
     "\/source\/scss\/csb-badges\/main.scss" : {
       "aP" : 1,
       "bl" : 0,
@@ -758,7 +745,7 @@
       "pg" : 0,
       "sct" : 1
     },
-    "\/source\/scss\/global-layout\/panels\/_panel-rhs.scss" : {
+    "\/source\/scss\/global-layout\/panels\/_panel-threads.scss" : {
       "aP" : 1,
       "bl" : 0,
       "co" : 0,
@@ -767,7 +754,22 @@
       "ft" : 4,
       "ma" : 1,
       "oA" : 1,
-      "oAP" : "\/build\/css\/global-layout\/panels\/_panel-rhs.css",
+      "oAP" : "\/build\/css\/global-layout\/panels\/_panel-threads.css",
+      "oF" : 0,
+      "oS" : 1,
+      "pg" : 0,
+      "sct" : 1
+    },
+    "\/source\/scss\/global-layout\/panels\/_panel.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 1,
+      "oAP" : "\/build\/css\/global-layout\/panels\/_panel.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -2867,7 +2869,7 @@
       "ENVIRONMENT:::$NODE_ENV"
     ],
     "rollupTreeshakingEnabled" : 1,
-    "skippedFoldersString" : "log, _logs, logs, _cache, cache, .idea, \/storage\/framework\/sessions, node_modules",
+    "skippedFoldersString" : "log,node_modules,\/.nova,\/storage\/framework\/sessions,_cache,_logs,.idea,logs,cache",
     "sourceFolderName" : "source",
     "susyVersion" : 3,
     "tsAllowSyntheticDefaultImports" : 0,
