@@ -1,3 +1,6 @@
+@import '../../../node_modules/@mattermost/compass-icons/css/compass-icons.css';
+@import '../shared/typography';
+
 @import './variables';
 @import './mixins';
 
@@ -11,3 +14,10 @@
 
 @import './sidebars/sidebars';
 @import './panels/panels';
+
+@import '../components/variables';
+@import '../components/label';
+@import '../components/heading';
+@import '../components/icon';
+@import '../components/icon-button';
+@import '../components/button';

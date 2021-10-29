@@ -1,4 +1,24 @@
 .Panel__main {
+    @include position(0px, 0px);
+
+    > section {
+        @include panel-background(
+            var(--sidebar-lhs-color-background),
+            var(--main-color-background),
+            var(--shadow-elevation-2),
+            true
+        );
+    }
+
+    #root.MobileMenu--open & {
+        transform: translateX(calc(var(--team-sidebar-width) + var(--lhs-sidebar-width)));
+
+        // disable interaction on child elements
+        > * {
+            pointer-events: none;
+        }
+    }
+
     @media screen and (max-width: $breakpoint-mobile-max) {
     }
     @media screen and (max-width: $breakpoint-tablet-max) {

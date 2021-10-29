@@ -7,6 +7,11 @@ html(lang="en")
         link(rel="stylesheet" type="text/css" href="https://yarnpkg.com/en/package/normalize.css")
         link(rel="stylesheet" type="text/css" href="/build/css/global-layout/main.css")
     body.global-layout.enable-animations
+        include ../components/_heading
+        include ../components/_label
+        include ../components/_icon
+        include ../components/_icon-button
+
         div#root.Teams--open
             div#GlobalBanner.Toast
             div.AppContainer
@@ -18,12 +23,36 @@ html(lang="en")
                     div.Sidebars.Sidebars__left
                         section#Teams.Sidebar.Sidebar__teams.open
                         section#LHS.Sidebar.Sidebar__left
-                    div.Panels
-                        main#Main.Panel.Panel__main.active
+                    main#Main.Panel.Panel__main
+                        header
+                            +iconButton({
+                                size: "compact",
+                                iconGlyph: "icon-menu-variant",
+                                label: "Icon button",
+                                inverted: true,
+                            }, "MobileMenu")
+                            +heading({text: "UX Design", size: "large"})
+                        section
+                    div#RHS.Panels
+                        section#Threads.Panel.Panel__threads
                             header
+                                +iconButton({
+                                    size: "compact",
+                                    iconGlyph: "icon-arrow-back-ios",
+                                    label: "Go back",
+                                    inverted: true,
+                                }, "RHSBackButton")
+                                +heading({text: "Threads", size: "large"})
                             section
-                        section#RHS.Panel.Panel__rhs
+                        section#UserProfile.Panel.Panel__userProfile
                             header
+                                +iconButton({
+                                    size: "compact",
+                                    iconGlyph: "icon-arrow-back-ios",
+                                    label: "Go back",
+                                    inverted: true,
+                                }, "RHSBackButton")
+                                +heading({text: "User profile", size: "large"})
                             section
                     div.Sidebars.Sidebars__right
                         section#AppsBar.Sidebar.Sidebar__apps

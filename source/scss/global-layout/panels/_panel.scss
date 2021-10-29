@@ -1,0 +1,72 @@
+.Panel {
+    @include flex-column;
+    @include flex-dynamic;
+    @include size(100%, 100%);
+
+    > header {
+        @include flex-row;
+        @include flex-fixed;
+        @include flex-layout(flex-start);
+        @include size(100%, 40px);
+
+        position: relative;
+        padding: 0 10px;
+        color: white;
+        background: var(--sidebar-lhs-color-background);
+
+        > * + * {
+            margin-left: 8px;
+        }
+    }
+
+    > section {
+        @include flex-column;
+        @include flex-dynamic;
+        @include panel-background(
+            transparent,
+            var(--main-color-background),
+            var(--shadow-elevation-2),
+            true
+        );
+    }
+
+    // first panel is always active
+    &:first-child {
+        position: relative;
+        transform: translateX(-100%);
+    }
+
+    &.active {
+        transform: translateX(-100%);
+    }
+
+    > header {
+        #root.MobileMenu--open & {
+            background: var(--global-header-color-background);
+        }
+    }
+
+    // animation
+    transition: color var(--animation-length-short) 0s ease-in-out,
+        transform var(--animation-length-short) 0s ease-in-out;
+
+    > header {
+        transition: background var(--animation-length-short) 0s ease-in-out;
+    }
+
+    &::before {
+        transition: color var(--animation-length-short) 0s ease-in-out,
+            border-radius var(--animation-length-short) 0s ease-in-out;
+    }
+
+    @media screen and (max-width: $breakpoint-mobile-max) {
+    }
+    @media screen and (max-width: $breakpoint-tablet-max) {
+    }
+    @media screen and (max-width: $breakpoint-small-desktop-max) {
+    }
+    @media screen and (max-width: $breakpoint-medium-desktop-max) {
+    }
+    @media screen and (min-width: $breakpoint-large-desktop-min) {
+    }
+}

@@ -2,71 +2,20 @@
     @include flex-row;
     @include flex-dynamic;
     @include size(100%, 100%);
-    @include position(0px, 0px);
+    @include position(100%, 0px);
 
-    > .Panel {
-        @include flex-column;
-        @include flex-dynamic;
-        @include size(100%, 100%);
-        @include position(100%, 0px);
+    overflow: hidden;
 
-        background: var(--sidebar-lhs-color-background);
-
-        > header {
-            @include flex-row;
-            @include flex-fixed;
-            @include size(100%, 40px);
-        }
-
-        > section {
-            @include flex-column;
-            @include flex-dynamic;
-            @include panel-background(
-                var(--sidebar-lhs-color-background),
-                var(--main-color-background),
-                var(--shadow-elevation-2),
-                true
-            );
-        }
-
-        &.active {
-            position: relative;
-            transform: translateX(-100%);
-        }
-
-        #root.MobileMenu--open & {
-            background: transparent;
-        }
-
-        @media screen and (max-width: $breakpoint-mobile-max) {
-        }
-        @media screen and (max-width: $breakpoint-tablet-max) {
-        }
-        @media screen and (max-width: $breakpoint-small-desktop-max) {
-        }
-        @media screen and (max-width: $breakpoint-medium-desktop-max) {
-        }
-        @media screen and (min-width: $breakpoint-large-desktop-min) {
-        }
+    &.open {
+        transform: translateX(-100%);
     }
 
-    #root.MobileMenu--open & {
-        transform: translateX(calc(var(--team-sidebar-width) + var(--lhs-sidebar-width)));
-        pointer-events: none;
+    > .Panel {
+        @include position(100%, 0px);
     }
 
     // animation
     transition: transform var(--animation-length-short) 0s ease-in-out;
-
-    > .Panel {
-        transition: color var(--animation-length-short) 0s ease-in-out,
-            background var(--animation-length-short) 0s ease-in-out;
-
-        &::before {
-            transition: color var(--animation-length-short) 0s ease-in-out,
-                border-radius var(--animation-length-short) 0s ease-in-out;
-        }
-    }
 
     @media screen and (max-width: $breakpoint-mobile-max) {
     }
@@ -80,5 +29,6 @@
     }
 }
 
+@import './panel';
 @import './panel-main';
-@import './panel-rhs';
+@import './panel-threads';

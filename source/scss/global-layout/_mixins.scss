@@ -43,9 +43,19 @@
     flex: 1 1 auto;
 }
 
+@mixin flex-layout($justify: center, $align: center) {
+    justify-content: $justify;
+    align-items: $align;
+}
+
 @mixin size($width: auto, $height: auto) {
     width: $width;
     height: $height;
+}
+
+@mixin min-size($width: auto, $height: auto) {
+    min-width: $width;
+    min-height: $height;
 }
 
 @mixin collapsed {
