@@ -1,0 +1,12 @@
+mixin heading(props, extraClasses)
+    -
+        var headingClasses = {
+            "Heading___small": props.size === "small",
+            "Heading___standard": props.size === "standard",
+            "Heading___large": props.size === "large",
+            "Heading___wrap": props.wrap === true
+        }
+        var tag = props.tag ? props.tag : "h1"
+    |
+    |
+    #{tag}.Heading(class=[headingClasses, extraClasses] title=(props.title ? props.text : false))= props.text

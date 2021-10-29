@@ -1,0 +1,29 @@
+// SASS Variables
+// - animation/transitions
+$animation-speed-shortest: 0.1s;
+$animation-speed-shorter: 0.15s;
+$animation-speed-short: 0.2s;
+$animation-speed-normal: 0.3s;
+$animation-speed-long: 0.4s;
+$animation-speed-longer: 0.45s;
+$animation-speed-longest: 0.5s;
+
+// SASS Functions
+@function color($rgb, $alpha: 1) {
+    @if $alpha >= 0 and $alpha < 1 {
+        @return unquote('rgba(var(#{$rgb}), #{$alpha})');
+    } @else {
+        @return unquote('rgb(var(#{$rgb}))');
+    }
+}
+
+// CSS Variables
+:root {
+    // base colour variables
+    --black-rgb: 0, 0, 0;
+    --white-rgb: 255, 255, 255;
+    --background-rgb: 255, 255, 255;
+    --foreground-rgb: 63, 67, 80;
+    --button-background-rgb: 28, 88, 217;
+    --button-foreground-rgb: 255, 255, 255;
+}
