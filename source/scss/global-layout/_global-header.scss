@@ -1,7 +1,67 @@
 #GlobalHeader {
     @include flex-row;
     @include flex-fixed;
+    @include flex-layout(flex-start);
     @include size(100%, var(--global-header-height));
 
+    padding: 0 12px;
+    color: var(--global-header-color-foreground);
     background: var(--global-header-color-background);
+
+    > .LeftControlsContainer {
+        @include flex-row;
+        @include flex-fixed;
+        @include flex-layout(flex-start);
+
+        > * + * {
+            margin-left: 4px;
+        }
+    }
+
+    > .CenterControlsContainer {
+        @include flex-row;
+        @include flex-dynamic;
+        @include flex-layout(center);
+    }
+
+    > .RightControlsContainer {
+        @include flex-row;
+        @include flex-fixed;
+        @include flex-layout(flex-end);
+    }
+
+    .ProductsButton {
+        > .Icon {
+            &::before {
+                font-size: 2rem;
+                letter-spacing: 2rem;
+            }
+        }
+    }
+
+    // small views
+    // - all small views
+    @include media-width(null, $width-tablet-small-max) {
+        @include size(var(--mobile-menu-width), var(--global-header-height));
+    }
+    // mobile only
+    @include media-width(null, $width-mobile-max) {
+    }
+    // small tablet only
+    @include media-width($width-tablet-small-max, $width-tablet-small-max) {
+    }
+
+    // large views
+    // - all large views
+    @include media-width($width-tablet-large-min) {
+    }
+    // - large tablet only
+    @include media-width($width-tablet-large-min, $width-tablet-large-max) {
+    }
+    // - small desktop only
+    @include media-width($width-desktop-small-min, $width-desktop-small-max) {
+    }
+    // - large desktop only
+    @include media-width($width-desktop-large-min) {
+    }
 }

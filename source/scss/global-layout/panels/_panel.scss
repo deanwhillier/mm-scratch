@@ -1,72 +1,97 @@
 .Panel {
     @include flex-column;
     @include flex-dynamic;
-    @include size(100%, 100%);
 
     > header {
         @include flex-row;
         @include flex-fixed;
         @include flex-layout(flex-start);
-        @include size(100%, 40px);
 
         position: relative;
-        padding: 0 10px;
-        color: white;
-        background: var(--sidebar-lhs-color-background);
+    }
 
-        > * + * {
-            margin-left: 8px;
+    // small views
+    // - all small views
+    @include media-width(null, $width-tablet-small-max) {
+        @include size(100%, 100%);
+
+        > header {
+            @include size(100%, 40px);
+
+            padding: 0 10px;
+            color: white;
+            background: var(--sidebar-lhs-color-background);
+            border: none;
+
+            > * + * {
+                margin-left: 8px;
+            }
         }
-    }
 
-    > section {
-        @include flex-column;
-        @include flex-dynamic;
-        @include panel-background(
-            transparent,
-            var(--main-color-background),
-            var(--shadow-elevation-2),
-            true
-        );
-    }
-
-    // first panel is always active
-    &:first-child {
-        position: relative;
-        transform: translateX(-100%);
-    }
-
-    &.active {
-        transform: translateX(-100%);
-    }
-
-    > header {
-        #root.MobileMenu--open & {
-            background: var(--global-header-color-background);
+        > section {
+            @include flex-column;
+            @include flex-dynamic;
+            @include panel-background(
+                transparent,
+                var(--main-color-background),
+                var(--shadow-elevation-2),
+                true
+            );
         }
-    }
 
-    // animation
-    transition: color var(--animation-length-short) 0s ease-in-out,
-        transform var(--animation-length-short) 0s ease-in-out;
+        > header {
+            #root.MobileMenu--open & {
+                background: var(--global-header-color-background);
+            }
+        }
 
-    > header {
-        transition: background var(--animation-length-short) 0s ease-in-out;
-    }
-
-    &::before {
+        // animation
         transition: color var(--animation-length-short) 0s ease-in-out,
-            border-radius var(--animation-length-short) 0s ease-in-out;
+            transform var(--animation-length-short) 0s ease-in-out;
+
+        > header {
+            transition: background var(--animation-length-short) 0s ease-in-out;
+        }
+
+        &::before {
+            transition: color var(--animation-length-short) 0s ease-in-out,
+                border-radius var(--animation-length-short) 0s ease-in-out;
+        }
+    }
+    // mobile only
+    @include media-width(null, $width-mobile-max) {
+    }
+    // small tablet only
+    @include media-width($width-tablet-small-max, $width-tablet-small-max) {
     }
 
-    @media screen and (max-width: $breakpoint-mobile-max) {
+    // large views
+    // - all large views
+    @include media-width($width-tablet-large-min) {
+        @include size(100%, 100%);
+        @include panel-background(transparent, var(--main-color-background), none);
+
+        > header {
+            @include size(100%, 56px);
+
+            padding: 0 16px;
+            border-bottom: solid 1px rgba(var(--main-color-foreground-rgb), 0.08);
+
+            > *:not(.mobile--visible) + * {
+                margin-left: 8px;
+            }
+        }
+
+        // animation
+        transition: transform var(--animation-length-short) 0s ease-in-out;
     }
-    @media screen and (max-width: $breakpoint-tablet-max) {
+    // - large tablet only
+    @include media-width($width-tablet-large-min, $width-tablet-large-max) {
     }
-    @media screen and (max-width: $breakpoint-small-desktop-max) {
+    // - small desktop only
+    @include media-width($width-desktop-small-min, $width-desktop-small-max) {
     }
-    @media screen and (max-width: $breakpoint-medium-desktop-max) {
-    }
-    @media screen and (min-width: $breakpoint-large-desktop-min) {
+    // - large desktop only
+    @include media-width($width-desktop-large-min) {
     }
 }

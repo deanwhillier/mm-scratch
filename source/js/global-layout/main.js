@@ -1,6 +1,33 @@
+const widthDesktopLargeMin = 1600;
+const widthDesktopSmallMax = widthDesktopLargeMin - 1;
+const widthDesktopSmallMin = 1200;
+const widthTabletLargeMax = widthDesktopSmallMin - 1;
+const widthTabletLargeMin = 900;
+const widthTabletSmallMax = widthTabletLargeMin - 1;
+const widthTabletSmallMin = 600;
+const widthMobileMax = widthTabletSmallMin - 1;
+
+const WindowWidths = {
+    MOBILE: `(max-width: ${widthMobileMax}px)`,
+    TABLET_SMALL: `(min-width: ${widthTabletSmallMin}px) and (max-width: ${widthTabletSmallMax}px)`,
+    TABLET_LARGE: `(min-width: ${widthTabletLargeMin}px) and (max-width: ${widthTabletLargeMax}px)`,
+    DESKTOP_SMALL: `(min-width: ${widthDesktopSmallMin}px) and (max-width: ${widthDesktopSmallMax}px)`,
+    DESKTOP_LARGE: `(min-width: ${widthDesktopLargeMin}px)`,
+};
+
 (function () {
+    const root = document.getElementById('root');
     const RHS = document.getElementById('RHS');
     const RHSPanels = RHS.getElementsByClassName('Panel');
+
+    let currentWindowWidth;
+
+    Object.values(WindowWidths).map((queryDefinition) => {
+        const query = window.matchMedia(queryDefinition);
+        query.addEventListener('change', handleMediaQueryChange);
+        handleMediaQueryChange(query);
+        return query;
+    });
 
     document.addEventListener('keydown', (event) => {
         switch (event.code) {
@@ -11,8 +38,11 @@
             }
             // open/close the mobile menu
             case 'Digit2': {
+                if (currentWindowWidth !== 'MOBILE' && currentWindowWidth !== 'TABLET_SMALL') {
+                    return;
+                }
                 toggleMobileMenu();
-                triggerRHS(true);
+                closeRHS();
                 break;
             }
             // open/close the team sidebar
@@ -20,10 +50,23 @@
                 toggleTeamSidebar();
                 break;
             }
-            // open/close the rhs
+            // RHS: open and add panels
             case 'Digit4': {
                 toggleMobileMenu(true);
-                triggerRHS();
+                pushRHS();
+                break;
+            }
+            // RHS: remove panels and close
+            case 'Digit5': {
+                popRHS();
+                break;
+            }
+            // open/close the apps sidebar
+            case 'Digit6': {
+                if (currentWindowWidth === 'MOBILE' || currentWindowWidth === 'TABLET_SMALL') {
+                    return;
+                }
+                toggleAppsSidebar();
                 break;
             }
         }
@@ -31,8 +74,7 @@
 
     // main view
     document.querySelector('#Main').addEventListener('click', () => {
-        const rootElement = document.getElementById('root');
-        if (rootElement.classList.contains('MobileMenu--open')) {
+        if (root.classList.contains('MobileMenu--open')) {
             toggleMobileMenu(true);
         }
     });
@@ -42,7 +84,7 @@
         event.stopPropagation();
         event.target.blur();
         toggleMobileMenu();
-        triggerRHS(true);
+        closeRHS();
     });
 
     // rhs back button
@@ -63,27 +105,29 @@
 
     function toggleGlobalBanner(forceClose = false) {
         document.getElementById('GlobalBanner').classList[forceClose ? 'remove' : 'toggle']('open');
-        document
-            .getElementById('root')
-            .classList[forceClose ? 'remove' : 'toggle']('GlobalBanner--open');
+        root.classList[forceClose ? 'remove' : 'toggle']('GlobalBanner--open');
     }
 
     function toggleTeamSidebar(forceClose = false) {
         document.getElementById('Teams').classList[forceClose ? 'remove' : 'toggle']('open');
-        document.getElementById('root').classList[forceClose ? 'remove' : 'toggle']('Teams--open');
+        root.classList[forceClose ? 'remove' : 'toggle']('Teams--open');
+    }
+
+    function toggleAppsSidebar(forceClose = false) {
+        document.getElementById('AppsBar').classList[forceClose ? 'remove' : 'toggle']('open');
+        root.classList[forceClose ? 'remove' : 'toggle']('AppsBar--open');
     }
 
     function toggleMobileMenu(forceClose = false) {
-        const rootElement = document.getElementById('root');
-        rootElement.classList[forceClose ? 'remove' : 'toggle']('MobileMenu--open');
+        root.classList[forceClose ? 'remove' : 'toggle']('MobileMenu--open');
     }
 
-    function triggerRHS(forceClose = false) {
-        if (forceClose) {
-            RHS.classList.remove('open');
-            Array.from(RHSPanels).forEach((panel) => panel.classList.remove('active'));
-            return;
-        }
+    function closeRHS() {
+        RHS.classList.remove('open');
+        Array.from(RHSPanels).forEach((panel) => panel.classList.remove('active'));
+    }
+
+    function pushRHS() {
         const nextPanel = Array.from(RHSPanels).find(
             (panel, index) => index !== 0 && !panel.classList.contains('active')
         );
@@ -95,5 +139,29 @@
             return;
         }
         nextPanel.classList.add('active');
+    }
+
+    function popRHS() {
+        const activePanels = Array.from(RHSPanels).filter(
+            (panel, index) => index !== 0 && panel.classList.contains('active')
+        );
+        if (activePanels.length === 0) {
+            if (RHS.classList.contains('open')) {
+                RHS.classList.remove('open');
+                return;
+            }
+            return;
+        }
+        const lastActivePanel = activePanels.pop();
+        lastActivePanel.classList.remove('active');
+    }
+
+    function handleMediaQueryChange(event) {
+        if (event.matches) {
+            Object.keys(WindowWidths).forEach((query) => root.classList.remove(query));
+            const matchIndex = Object.values(WindowWidths).indexOf(event.media);
+            currentWindowWidth = Object.keys(WindowWidths)[matchIndex];
+            root.classList.add(currentWindowWidth);
+        }
     }
 })();

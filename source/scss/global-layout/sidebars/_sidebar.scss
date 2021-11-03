@@ -1,21 +1,19 @@
-#LHS {
-    @include flex-column;
-    @include flex-dynamic;
-    @include size(var(--lhs-sidebar-width), 100%);
+.Sidebar {
+    // animation
 
-    @include panel-background(
-        var(--sidebar-team-color-background),
-        var(--sidebar-lhs-color-background)
-    );
+    transition: width var(--animation-length-short) 0s ease-in-out,
+        visibility var(--animation-length-short) 0s step-end,
+        color var(--animation-length-short) 0s ease-in-out;
 
-    #root:not(.Teams--open) & {
-        @include panel-background(
-            var(--global-header-color-background),
-            var(--sidebar-lhs-color-background)
-        );
-        &::before {
-            border-bottom-left-radius: 0px;
-        }
+    &.open {
+        transition: width var(--animation-length-short) 0s ease-in-out,
+            visibility var(--animation-length-short) 0s step-start,
+            color var(--animation-length-short) 0s ease-in-out;
+    }
+
+    &::before {
+        transition: color var(--animation-length-short) 0s ease-in-out,
+            border-radius var(--animation-length-short) 0s ease-in-out;
     }
 
     // small views

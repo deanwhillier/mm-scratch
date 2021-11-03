@@ -17,10 +17,13 @@
         right: 0;
         background: $foreground-color;
         box-shadow: $shadow;
+        border: 1px solid rgba(63, 67, 80, 0.08);
+        z-index: 0;
 
         @if $top == true {
             border-radius: var(--panel-corner-radius) var(--panel-corner-radius) 0 0;
         } @else {
+            right: calc(0px - var(--panel-corner-radius));
             border-radius: var(--panel-corner-radius) 0 0 var(--panel-corner-radius);
         }
     }
@@ -66,13 +69,29 @@
     }
 }
 
-@mixin position($x: 0, $y: 0, $fromRight: false) {
-    position: absolute;
+@mixin position($x: 0, $y: 0, $type: relative, $fromRight: false) {
+    position: $type;
     top: $y;
 
     @if $fromRight {
         right: $x;
     } @else {
         left: $x;
+    }
+}
+
+@mixin media-width($min, $max: null) {
+    @if $min and $max {
+        @media screen and (min-width: $min) and (max-width: $max) {
+            @content;
+        }
+    } @else if $max {
+        @media screen and (max-width: $max) {
+            @content;
+        }
+    } @else {
+        @media screen and (min-width: $min) {
+            @content;
+        }
     }
 }

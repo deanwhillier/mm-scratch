@@ -1,31 +1,107 @@
 .Panels {
-    @include flex-row;
-    @include flex-dynamic;
-    @include size(100%, 100%);
-    @include position(100%, 0px);
+    // small views
+    // - all small views
+    @include media-width(null, $width-tablet-small-max) {
+        @include flex-row;
+        @include flex-dynamic;
+        @include size(100%, 100%);
+        @include position(100%, 0px, absolute);
 
-    overflow: hidden;
+        &.open {
+            transform: translateX(-100%);
+        }
 
-    &.open {
-        transform: translateX(-100%);
+        > .Panel {
+            @include position(100%, 0px, absolute);
+
+            // first panel is always active
+            &:first-child {
+                @include position(0px, 0px);
+            }
+
+            &.active {
+                transform: translateX(-100%);
+            }
+        }
+
+        // animation
+        transition: transform var(--animation-length-short) 0s ease-in-out;
+    }
+    // mobile only
+    @include media-width(null, $width-mobile-max) {
+    }
+    // small tablet only
+    @include media-width($width-tablet-small-max, $width-tablet-small-max) {
     }
 
-    > .Panel {
-        @include position(100%, 0px);
-    }
+    // large views
+    // - all large views
+    @include media-width($width-tablet-large-min) {
+        @include flex-row;
+        @include flex-fixed;
+        @include size(0px, 100%);
+        @include panel-background(
+            transparent,
+            var(--main-color-background),
+            var(--shadow-elevation-0)
+        );
 
-    // animation
-    transition: transform var(--animation-length-short) 0s ease-in-out;
+        position: relative;
 
-    @media screen and (max-width: $breakpoint-mobile-max) {
+        &.open {
+            @include size(400px, 100%);
+            @include panel-background(
+                transparent,
+                var(--main-color-background),
+                var(--shadow-elevation-2)
+            );
+        }
+
+        > .Panel {
+        }
+
+        &.stacked {
+            > .Panel {
+                @include position(100%, 0px, absolute);
+
+                // first panel is always active
+                &:first-child {
+                    @include position(0px, 0px);
+                }
+
+                &.active {
+                    transform: translateX(-100%);
+                }
+            }
+        }
+
+        // animation
+        transition: width var(--animation-length-short) 0s ease-in-out,
+            box-shadow var(--animation-length-short) 0s ease-in-out;
     }
-    @media screen and (max-width: $breakpoint-tablet-max) {
+    // - large tablet only
+    @include media-width($width-tablet-large-min, $width-tablet-large-max) {
+        @include size(400px, 100%);
+        @include position(100%, 0px, absolute);
+
+        transform: translateX(calc(0% - var(--apps-sidebar-width)));
+
+        &.open {
+            position: absolute;
+            transform: translateX(calc(-100% - var(--apps-sidebar-width)));
+        }
+
+        // animation
+        transition: transform var(--animation-length-short) 0s ease-in-out;
     }
-    @media screen and (max-width: $breakpoint-small-desktop-max) {
+    // - small desktop only
+    @include media-width($width-desktop-small-min, $width-desktop-small-max) {
     }
-    @media screen and (max-width: $breakpoint-medium-desktop-max) {
-    }
-    @media screen and (min-width: $breakpoint-large-desktop-min) {
+    // - large desktop only
+    @include media-width($width-desktop-large-min) {
+        &.open {
+            @include size(500px, 100%);
+        }
     }
 }
 

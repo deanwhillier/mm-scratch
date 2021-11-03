@@ -1,0 +1,64 @@
+.TeamButton {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+
+    // states
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        border-radius: 8px;
+        z-index: 0;
+    }
+
+    &::before {
+        background: color(--background-rgb, 0.16);
+    }
+    &::after {
+        top: -3px;
+        left: -3px;
+        bottom: -3px;
+        right: -3px;
+        border: solid 0px transparent;
+        border-radius: 11px;
+        transform: scale3d(calc(40 / 46), calc(40 / 46), 1);
+    }
+
+    &:hover,
+    &.hover,
+    &:active,
+    &.active,
+    &:focus,
+    &.focus {
+        &::before {
+            transform: scale3d(0.85, 0.85, 1);
+        }
+        &::after {
+            border: solid 3px #5d89ea;
+            transform: scale3d(1, 1, 1);
+        }
+    }
+
+    // animation
+    .enable-animations & {
+        &::before,
+        &::after {
+            transition: transform $animation-speed-short 0s ease-in-out,
+                border $animation-speed-short 0s ease-in-out;
+        }
+    }
+}

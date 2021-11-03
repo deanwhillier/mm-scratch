@@ -1,9 +1,12 @@
-// breakpoints
-$breakpoint-mobile-max: 599px;
-$breakpoint-tablet-max: 899px;
-$breakpoint-small-desktop-max: 1199px;
-$breakpoint-medium-desktop-max: 1679px;
-$breakpoint-large-desktop-min: 1600px;
+// screen width breakpoints
+$width-desktop-large-min: 1600px;
+$width-desktop-small-max: $width-desktop-large-min - 1px;
+$width-desktop-small-min: 1200px;
+$width-tablet-large-max: $width-desktop-small-min - 1px;
+$width-tablet-large-min: 900px;
+$width-tablet-small-max: $width-tablet-large-min - 1px;
+$width-tablet-small-min: 600px;
+$width-mobile-max: $width-tablet-small-min - 1px;
 
 // variables
 :root {
@@ -20,14 +23,21 @@ $breakpoint-large-desktop-min: 1600px;
     --global-header-height: 40px;
     --team-sidebar-width: 64px;
     --lhs-sidebar-width: 240px;
+    --apps-sidebar-width: 48px;
     --panel-corner-radius: 12px;
+    --mobile-menu-width: calc(var(--team-sidebar-width) + var(--lhs-sidebar-width));
     // colour
     --global-banner-color-background: #f74343;
     --global-header-color-background: #14213e;
+    --global-header-color-foreground: #ffffff;
     --sidebar-lhs-color-background: #1e325c;
-    --main-color-background: white;
+    --main-color-background: #ffffff;
+    --main-color-foreground: #616064;
+    --main-color-foreground-rgb: 97, 96, 100;
     --sidebar-team-color-background: #192a4d;
+    --sidebar-apps-color-background: #f7f7f8;
     // elevations
+    --shadow-elevation-0: 0px 0px 0px rgba(0, 0, 0, 0);
     --shadow-elevation-1: 0px 2px 3px rgba(0, 0, 0, 0.08);
     --shadow-elevation-2: 0px 4px 6px rgba(0, 0, 0, 0.12);
 }

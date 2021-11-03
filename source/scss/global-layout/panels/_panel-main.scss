@@ -1,32 +1,50 @@
 .Panel__main {
-    @include position(0px, 0px);
+    // small views
+    // - all small views
+    @include media-width(null, $width-tablet-small-max) {
+        @include position(0px, 0px, absolute);
 
-    > section {
-        @include panel-background(
-            var(--sidebar-lhs-color-background),
-            var(--main-color-background),
-            var(--shadow-elevation-2),
-            true
-        );
-    }
+        > section {
+            @include panel-background(
+                var(--sidebar-lhs-color-background),
+                var(--main-color-background),
+                var(--shadow-elevation-2),
+                true
+            );
+        }
 
-    #root.MobileMenu--open & {
-        transform: translateX(calc(var(--team-sidebar-width) + var(--lhs-sidebar-width)));
+        #root.MobileMenu--open & {
+            transform: translateX(var(--mobile-menu-width));
 
-        // disable interaction on child elements
-        > * {
-            pointer-events: none;
+            // disable interaction on child elements
+            > * {
+                pointer-events: none;
+            }
         }
     }
+    // mobile only
+    @include media-width(null, $width-mobile-max) {
+    }
+    // small tablet only
+    @include media-width($width-tablet-small-max, $width-tablet-small-max) {
+    }
 
-    @media screen and (max-width: $breakpoint-mobile-max) {
+    // large views
+    // - all large views
+    @include media-width($width-tablet-large-min) {
+        @include panel-background(
+            transparent,
+            var(--main-color-background),
+            var(--shadow-elevation-2)
+        );
     }
-    @media screen and (max-width: $breakpoint-tablet-max) {
+    // - large tablet only
+    @include media-width($width-tablet-large-min, $width-tablet-large-max) {
     }
-    @media screen and (max-width: $breakpoint-small-desktop-max) {
+    // - small desktop only
+    @include media-width($width-desktop-small-min, $width-desktop-small-max) {
     }
-    @media screen and (max-width: $breakpoint-medium-desktop-max) {
-    }
-    @media screen and (min-width: $breakpoint-large-desktop-min) {
+    // - large desktop only
+    @include media-width($width-desktop-large-min) {
     }
 }

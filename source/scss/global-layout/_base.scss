@@ -26,12 +26,23 @@ body,
     padding: 0;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    -webkit-font-smoothing: subpixel-antialiased;
-    -moz-osx-font-smoothing: grayscale;
+.mobile--visible.mobile--visible {
+    display: none;
+}
+.MOBILE,
+.TABLET_SMALL {
+    .mobile--visible {
+        display: initial;
+    }
+}
+
+.desktop--visible.desktop--visible {
+    display: none;
+}
+.TABLET_LARGE,
+.DESKTOP_SMALL,
+.DESKTOP_LARGE {
+    .desktop--visible {
+        display: initial;
+    }
 }

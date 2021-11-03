@@ -1,4 +1,31 @@
 .ProductContainer {
     @include flex-row;
     @include flex-dynamic;
+    @include size(100%, auto);
+
+    // small views
+    // - all small views
+    @include media-width(null, $width-tablet-small-max) {
+    }
+    // mobile only
+    @include media-width(null, $width-mobile-max) {
+    }
+    // small tablet only
+    @include media-width($width-tablet-small-max, $width-tablet-small-max) {
+    }
+
+    // large views
+    // - all large views
+    @include media-width($width-tablet-large-min) {
+        position: relative;
+    }
+    // - large tablet only
+    @include media-width($width-tablet-large-min, $width-tablet-large-max) {
+    }
+    // - small desktop only
+    @include media-width($width-desktop-small-min, $width-desktop-small-max) {
+    }
+    // - large desktop only
+    @include media-width($width-desktop-large-min) {
+    }
 }

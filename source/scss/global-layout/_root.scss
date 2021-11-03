@@ -7,8 +7,35 @@
 
     &:not(.Teams--open) {
         --team-sidebar-width: 0px;
+        --mobile-menu-width: calc(var(--team-sidebar-width) + var(--lhs-sidebar-width));
     }
 
-    // debug
-    background: var(--global-header-color-background);
+    &:not(.AppsBar--open) {
+        --apps-sidebar-width: 0px;
+    }
+
+    // small views
+    // - all small views
+    @include media-width(null, $width-tablet-small-max) {
+    }
+    // mobile only
+    @include media-width(null, $width-mobile-max) {
+    }
+    // small tablet only
+    @include media-width($width-tablet-small-max, $width-tablet-small-max) {
+    }
+
+    // large views
+    // - all large views
+    @include media-width($width-tablet-large-min) {
+    }
+    // - large tablet only
+    @include media-width($width-tablet-large-min, $width-tablet-large-max) {
+    }
+    // - small desktop only
+    @include media-width($width-desktop-small-min, $width-desktop-small-max) {
+    }
+    // - large desktop only
+    @include media-width($width-desktop-large-min) {
+    }
 }

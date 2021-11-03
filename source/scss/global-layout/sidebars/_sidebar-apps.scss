@@ -1,14 +1,49 @@
 .Sidebar__apps {
-    @media screen and (max-width: $breakpoint-mobile-max) {
+    @include flex-column;
+    @include flex-fixed;
+    @include size(var(--apps-sidebar-width), 100%);
+    @include collapsed;
+
+    @include panel-background(
+        var(--main-color-background),
+        var(--sidebar-apps-color-background),
+        var(--shadow-elevation-2)
+    );
+
+    > .AppContainer {
+        @include flex-dynamic;
+    }
+
+    > .MenuContainer {
+        @include flex-column;
+        @include flex-layout;
+        @include flex-fixed;
+        @include size(100%, 86px);
+    }
+
+    // small views
+    // - all small views
+    @include media-width(null, $width-tablet-small-max) {
         display: none;
     }
-    @media screen and (max-width: $breakpoint-tablet-max) {
-        display: none;
+    // mobile only
+    @include media-width(null, $width-mobile-max) {
     }
-    @media screen and (max-width: $breakpoint-small-desktop-max) {
+    // small tablet only
+    @include media-width($width-tablet-small-max, $width-tablet-small-max) {
     }
-    @media screen and (max-width: $breakpoint-medium-desktop-max) {
+
+    // large views
+    // - all large views
+    @include media-width($width-tablet-large-min) {
     }
-    @media screen and (min-width: $breakpoint-large-desktop-min) {
+    // - large tablet only
+    @include media-width($width-tablet-large-min, $width-tablet-large-max) {
+    }
+    // - small desktop only
+    @include media-width($width-desktop-small-min, $width-desktop-small-max) {
+    }
+    // - large desktop only
+    @include media-width($width-desktop-large-min) {
     }
 }

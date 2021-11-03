@@ -11,29 +11,55 @@ html(lang="en")
         include ../components/_label
         include ../components/_icon
         include ../components/_icon-button
+        include ../components/_team-button
 
-        div#root.Teams--open
+        div#root.Teams--open.AppsBar--open
             div#GlobalBanner.Toast
             div.AppContainer
                 header#GlobalHeader
                     nav.LeftControlsContainer
+                        +iconButton({
+                            size: "compact",
+                            iconGlyph: "icon-products",
+                            label: "Icon button",
+                            inverted: true,
+                        }, "ProductsButton")
+                        +icon({
+                            glyph: "icon-product-channels",
+                            size: "large"
+                        }, "desktop--visible")
+                        +heading({text: "Channels", size: "large"}, "desktop--visible")
                     div.CenterControlsContainer
                     div.RightControlsContainer
+                        +iconButton({
+                            size: "compact",
+                            iconGlyph: "icon-apps",
+                            label: "Apps Menu",
+                            inverted: true
+                        }, "RHSBackButton mobile--visible")
                 section.ProductContainer
                     div.Sidebars.Sidebars__left
                         section#Teams.Sidebar.Sidebar__teams.open
+                            +teamButton({active: true})
+                            +teamButton()
+                            +teamButton()
                         section#LHS.Sidebar.Sidebar__left
                     main#Main.Panel.Panel__main
                         header
                             +iconButton({
                                 size: "compact",
                                 iconGlyph: "icon-menu-variant",
-                                label: "Icon button",
+                                label: "Menu",
                                 inverted: true,
-                            }, "MobileMenu")
+                            }, "MobileMenu mobile--visible")
+                            +iconButton({
+                                size: "compact",
+                                iconGlyph: "icon-star-outline",
+                                label: "Favorite",
+                            }, "desktop--visible")
                             +heading({text: "UX Design", size: "large"})
                         section
-                    div#RHS.Panels
+                    div#RHS.Panels.stacked
                         section#Threads.Panel.Panel__threads
                             header
                                 +iconButton({
@@ -41,8 +67,13 @@ html(lang="en")
                                     iconGlyph: "icon-arrow-back-ios",
                                     label: "Go back",
                                     inverted: true,
-                                }, "RHSBackButton")
-                                +heading({text: "Threads", size: "large"})
+                                }, "RHSBackButton mobile--visible")
+                                +heading({text: "Thread", size: "large"})
+                                +iconButton({
+                                    size: "compact",
+                                    iconGlyph: "icon-close",
+                                    label: "Go back",
+                                }, "RHSBackButton desktop--visible")
                             section
                         section#UserProfile.Panel.Panel__userProfile
                             header
@@ -51,10 +82,37 @@ html(lang="en")
                                     iconGlyph: "icon-arrow-back-ios",
                                     label: "Go back",
                                     inverted: true,
-                                }, "RHSBackButton")
+                                }, "RHSBackButton mobile--visible")
+                                +iconButton({
+                                    size: "compact",
+                                    iconGlyph: "icon-arrow-back-ios",
+                                    label: "Go back",
+                                }, "RHSBackButton desktop--visible")
                                 +heading({text: "User profile", size: "large"})
                             section
+                        section#MessageUser.Panel.Panel__messageUser
+                            header
+                                +iconButton({
+                                    size: "compact",
+                                    iconGlyph: "icon-arrow-back-ios",
+                                    label: "Go back",
+                                    inverted: true,
+                                }, "RHSBackButton mobile--visible")
+                                +iconButton({
+                                    size: "compact",
+                                    iconGlyph: "icon-arrow-back-ios",
+                                    label: "Go back",
+                                }, "RHSBackButton desktop--visible")
+                                +heading({text: "Message User", size: "large"})
+                            section
                     div.Sidebars.Sidebars__right
-                        section#AppsBar.Sidebar.Sidebar__apps
+                        section#AppsBar.Sidebar.Sidebar__apps.open
+                            div.AppContainer
+                            div.MenuContainer
+                                +iconButton({
+                                    size: "compact",
+                                    iconGlyph: "icon-view-grid-plus-outline",
+                                    label: "Apps Menu",
+                                }, "RHSBackButton desktop--visible")
         
         script(src="/build/js/global-layout/main-min.js" type="text/javascript")

@@ -5,15 +5,38 @@
     @include collapsed;
 
     background: var(--global-banner-color-background);
-}
 
-// animation
-.Toast {
+    // animation
     transition: height var(--animation-length-shorter) 0s ease-in-out,
         visibility var(--animation-length-shorter) 0s step-end;
 
     &.open {
         transition: height var(--animation-length-shorter) 0s ease-in-out,
             visibility var(--animation-length-shorter) 0s step-start;
+    }
+
+    // small views
+    // - all small views
+    @include media-width(null, $width-tablet-small-max) {
+    }
+    // mobile only
+    @include media-width(null, $width-mobile-max) {
+    }
+    // small tablet only
+    @include media-width($width-tablet-small-max, $width-tablet-small-max) {
+    }
+
+    // large views
+    // - all large views
+    @include media-width($width-tablet-large-min) {
+    }
+    // - large tablet only
+    @include media-width($width-tablet-large-min, $width-tablet-large-max) {
+    }
+    // - small desktop only
+    @include media-width($width-desktop-small-min, $width-desktop-small-max) {
+    }
+    // - large desktop only
+    @include media-width($width-desktop-large-min) {
     }
 }

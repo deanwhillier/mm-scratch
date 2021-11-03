@@ -1,8 +1,15 @@
 .Sidebar__teams {
     @include flex-column;
     @include flex-fixed;
+    @include flex-layout(flex-start, center);
     @include size(var(--team-sidebar-width), 100%);
     @include collapsed;
+
+    padding: 12px 0;
+
+    > * + * {
+        margin-top: 12px;
+    }
 
     @include panel-background(
         var(--global-header-color-background),
@@ -13,14 +20,28 @@
         border-bottom-left-radius: 0px;
     }
 
-    @media screen and (max-width: $breakpoint-mobile-max) {
+    // small views
+    // - all small views
+    @include media-width(null, $width-tablet-small-max) {
     }
-    @media screen and (max-width: $breakpoint-tablet-max) {
+    // mobile only
+    @include media-width(null, $width-mobile-max) {
     }
-    @media screen and (max-width: $breakpoint-small-desktop-max) {
+    // small tablet only
+    @include media-width($width-tablet-small-max, $width-tablet-small-max) {
     }
-    @media screen and (max-width: $breakpoint-medium-desktop-max) {
+
+    // large views
+    // - all large views
+    @include media-width($width-tablet-large-min) {
     }
-    @media screen and (min-width: $breakpoint-large-desktop-min) {
+    // - large tablet only
+    @include media-width($width-tablet-large-min, $width-tablet-large-max) {
+    }
+    // - small desktop only
+    @include media-width($width-desktop-small-min, $width-desktop-small-max) {
+    }
+    // - large desktop only
+    @include media-width($width-desktop-large-min) {
     }
 }

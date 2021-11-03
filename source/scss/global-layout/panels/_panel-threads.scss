@@ -1,12 +1,29 @@
 .Panel__threads {
-    @media screen and (max-width: $breakpoint-mobile-max) {
+    // small views
+    // - all small views
+    @include media-width(null, $width-tablet-small-max) {
     }
-    @media screen and (max-width: $breakpoint-tablet-max) {
+    // mobile only
+    @include media-width(null, $width-mobile-max) {
     }
-    @media screen and (max-width: $breakpoint-small-desktop-max) {
+    // small tablet only
+    @include media-width($width-tablet-small-max, $width-tablet-small-max) {
     }
-    @media screen and (max-width: $breakpoint-medium-desktop-max) {
+
+    // large views
+    // - all large views
+    @include media-width($width-tablet-large-min) {
+        > header {
+            justify-content: space-between;
+        }
     }
-    @media screen and (min-width: $breakpoint-large-desktop-min) {
+    // - large tablet only
+    @include media-width($width-tablet-large-min, $width-tablet-large-max) {
+    }
+    // - small desktop only
+    @include media-width($width-desktop-small-min, $width-desktop-small-max) {
+    }
+    // - large desktop only
+    @include media-width($width-desktop-large-min) {
     }
 }
