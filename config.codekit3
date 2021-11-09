@@ -1266,6 +1266,17 @@
       "oF" : 0,
       "oS" : 0
     },
+    "\/source\/theme-exploration\/js\/main.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 1,
+      "mi" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/theme-exploration\/js\/main-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 1
+    },
     "\/source\/theme-exploration\/scss\/theme-exploration.scss" : {
       "aP" : 1,
       "bl" : 0,
@@ -1294,7 +1305,7 @@
     "displayValueWasSetByUser" : 0,
     "iconImageName" : "brackets-cafe",
     "iconImageWasSetByUser" : 0,
-    "lastBuiltDate" : 658124147.92006195
+    "lastBuiltDate" : 658171919.10474205
   },
   "projectSettings" : {
     "abortBuildOnError" : 1,
