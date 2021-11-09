@@ -69,7 +69,7 @@
     }
 }
 
-@mixin position($x: 0, $y: 0, $type: relative, $fromRight: false) {
+@mixin position($type: relative, $x: 0, $y: 0, $fromRight: false) {
     position: $type;
     top: $y;
 

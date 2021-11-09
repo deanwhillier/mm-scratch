@@ -5,18 +5,18 @@
         @include flex-row;
         @include flex-dynamic;
         @include size(100%, 100%);
-        @include position(100%, 0px, absolute);
+        @include position(absolute, 100%, 0px);
 
         &.open {
             transform: translateX(-100%);
         }
 
         > .Panel {
-            @include position(100%, 0px, absolute);
+            @include position(absolute, 100%, 0px);
 
             // first panel is always active
             &:first-child {
-                @include position(0px, 0px);
+                @include position(relative, 0px, 0px);
             }
 
             &.active {
@@ -60,13 +60,16 @@
         > .Panel {
         }
 
+        &.collapsed {
+        }
+
         &.stacked {
             > .Panel {
-                @include position(100%, 0px, absolute);
+                @include position(absolute, 100%, 0px);
 
                 // first panel is always active
                 &:first-child {
-                    @include position(0px, 0px);
+                    @include position(relative, 0px, 0px);
                 }
 
                 &.active {
@@ -82,7 +85,7 @@
     // - large tablet only
     @include media-width($width-tablet-large-min, $width-tablet-large-max) {
         @include size(400px, 100%);
-        @include position(100%, 0px, absolute);
+        @include position(absolute, 100%, 0px);
 
         transform: translateX(calc(0% - var(--apps-sidebar-width)));
 
