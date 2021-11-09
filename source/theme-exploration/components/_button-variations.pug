@@ -1,0 +1,61 @@
+mixin buttonVariations()
+    +label({text: "Primary"}, labelClasses)
+    div.inner-container
+        +button({
+            size: "small",
+            leftIconGlyph: "icon-emoticon-happy-outline",
+            label: "Default",
+        }, "ThemedElement")
+    div.inner-container
+        +button({
+            size: "small",
+            leftIconGlyph: "icon-emoticon-happy-outline",
+            label: "Destructive",
+            destructive: true,
+        }, "ThemedElement")
+    div.inner-container
+        +button({
+            size: "small",
+            leftIconGlyph: "icon-emoticon-happy-outline",
+            label: "Inverted",
+            inverted: true,
+        }, "ThemedElement")
+    div.inner-container
+        +button({
+            size: "small",
+            leftIconGlyph: "icon-emoticon-happy-outline",
+            label: "Disabled",
+            disabled: true,
+        }, "ThemedElement")
+    +label({text: "Secondary"}, labelClasses)
+    div.inner-container
+        +button({
+            size: "small",
+            leftIconGlyph: "icon-emoticon-happy-outline",
+            label: "Default",
+            style: "secondary",
+        }, "ThemedElement")
+    div.inner-container
+        +button({
+            size: "small",
+            leftIconGlyph: "icon-emoticon-happy-outline",
+            label: "Destructive",
+            style: "secondary",
+            destructive: true,
+        }, "ThemedElement")
+    div.inner-container
+        +button({
+            size: "small",
+            leftIconGlyph: "icon-emoticon-happy-outline",
+            label: "Inverted",
+            style: "secondary",
+            inverted: true,
+        }, "ThemedElement")
+    div.inner-container
+        +button({
+            size: "small",
+            leftIconGlyph: "icon-emoticon-happy-outline",
+            label: "Disabled",
+            style: "secondary",
+            disabled: true,
+        }, "ThemedElement")

@@ -3,23 +3,20 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    padding: 10px;
-    width: 40px;
-    height: 40px;
-    font-size: 14/10 * 1rem;
+    flex: 0 0 auto;
+    padding: 0;
+    font-size: 14px;
     line-height: 1;
-    color: color(--foreground-rgb, 0.56);
     border-radius: 4px;
     border: none;
     outline: none;
-    background: color(--foreground-rgb, 0);
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     overflow: hidden;
     cursor: pointer;
 
     // elements
-    .IconButton_icon {
-        color: color(--foreground-rgb, 0.56);
+    .IconButton_label {
+        margin-left: 4px;
     }
 
     // states
@@ -37,24 +34,38 @@
         z-index: 0;
     }
 
+    // - default states
+
+    & {
+        color: color(--icon-button-foreground-rgb, 0.56);
+        background: transparent;
+
+        &[inverted] {
+            color: color(--icon-button-highlight-rgb, 0.64);
+            background: transparent;
+        }
+    }
+
     &:hover,
     &.hover {
-        background: color(--foreground-rgb, 0.08);
+        color: color(--icon-button-foreground-rgb, 0.72);
+        background: color(--icon-button-foreground-rgb, 0.08);
 
-        .IconButton_icon {
-            color: color(--foreground-rgb, 0.72);
+        &[inverted] {
+            color: color(--icon-button-highlight-rgb);
+            background: color(--icon-button-highlight-rgb, 0.08);
         }
     }
     &:focus,
     &.focus {
         &::before {
-            border-color: color(--button-background-rgb);
+            border-color: color(--icon-button-background-rgb);
         }
         &::after {
-            border-color: color(--white-rgb, 0.32);
+            border-color: color(--icon-button-highlight-rgb, 0.32);
         }
     }
-    &:focus:not(:focus-visible) {
+    &:focus:not(:focus-visible):not(.focus) {
         &::before {
             border-color: transparent;
         }
@@ -64,20 +75,115 @@
     }
     &:focus-visible {
         &::before {
-            border-color: color(--button-background-rgb);
+            border-color: color(--icon-button-background-rgb);
         }
         &::after {
-            border-color: color(--white-rgb, 0.32);
+            border-color: color(--icon-button-highlight-rgb, 0.32);
         }
     }
     &:active,
     &.active {
-        background: color(--button-background-rgb, 0.08);
+        color: color(--icon-button-background-rgb);
+        background: color(--icon-button-background-rgb, 0.08);
 
-        .IconButton_icon {
-            color: color(--button-background-rgb);
+        &[inverted] {
+            color: color(--icon-button-highlight-rgb);
+            background: color(--icon-button-highlight-rgb, 0.16);
         }
     }
+
+    // - toggled state
+
+    &[toggled]:not([destructive]) {
+        color: color(--icon-button-highlight-rgb);
+        background: color(--icon-button-background-rgb);
+
+        &[inverted] {
+            color: color(--icon-button-background-rgb);
+            background: color(--icon-button-highlight-rgb);
+        }
+
+        &:hover,
+        &.hover {
+            color: color(--icon-button-highlight-rgb);
+            background: color(--icon-button-background-rgb, 0.92);
+
+            &[inverted] {
+                color: color(--icon-button-background-rgb);
+                background: color(--icon-button-highlight-rgb, 0.92);
+            }
+        }
+        &:active,
+        &.active {
+            color: color(--icon-button-background-rgb);
+            background: color(--icon-button-background-rgb, 0.08);
+
+            &[inverted] {
+                color: color(--icon-button-highlight-rgb);
+                background: color(--icon-button-highlight-rgb, 0.16);
+            }
+        }
+    }
+
+    // - destructive state
+    &[destructive] {
+        color: color(--icon-button-destructive-rgb);
+        background: transparent;
+
+        &[inverted] {
+            color: color(--icon-button-highlight-rgb, 0.64);
+            background: trransparent;
+        }
+
+        &:hover,
+        &.hover {
+            color: color(--icon-button-destructive-rgb);
+            background: color(--icon-button-destructive-rgb, 0.08);
+
+            &[inverted] {
+                color: color(--icon-button-highlight-rgb);
+                background: color(--icon-button-destructive-rgb, 0.8);
+            }
+        }
+        &:focus,
+        &.focus {
+            &::before {
+                border-color: color(--icon-button-destructive-rgb);
+            }
+            &::after {
+                border-color: color(--icon-button-highlight-rgb, 0.32);
+            }
+        }
+        &:focus:not(:focus-visible):not(.focus) {
+            &::before {
+                border-color: transparent;
+            }
+            &::after {
+                border-color: transparent;
+            }
+        }
+        &:focus-visible {
+            &::before {
+                border-color: color(--icon-button-destructive-rgb);
+            }
+            &::after {
+                border-color: color(--icon-button-highlight-rgb, 0.32);
+            }
+        }
+        &:active,
+        &.active {
+            color: color(--icon-button-destructive-rgb);
+            background: color(--icon-button-destructive-rgb, 0.16);
+
+            &[inverted] {
+                color: color(--icon-button-highlight-rgb);
+                background: color(--icon-button-destructive-rgb);
+            }
+        }
+    }
+
+    // disabled state
+
     &[disabled],
     &.disabled {
         cursor: not-allowed;
@@ -89,87 +195,64 @@
         &.focus,
         &:active,
         &.active {
+            color: color(--icon-button-foreground-rgb, 0.32);
             background: transparent;
 
-            .IconButton_icon {
-                color: color(--foreground-rgb, 0.32);
-            }
-
-            &::before {
+            &::before,
+            &::after {
                 border-color: transparent;
             }
-        }
-    }
 
-    // inverted states
-
-    &.inverted {
-        color: color(--button-foreground-rgb, 0.64);
-        background: color(--button-foreground-rgb, 0);
-
-        .IconButton_icon {
-            color: color(--button-foreground-rgb, 0.64);
-        }
-
-        &:hover,
-        &.hover {
-            background: color(--button-foreground-rgb, 0.08);
-
-            .IconButton_icon {
-                color: color(--button-foreground-rgb);
-            }
-        }
-        &:active,
-        &.active {
-            background: color(--button-foreground-rgb, 0.16);
-
-            .IconButton_icon {
-                color: color(--button-foreground-rgb);
-            }
-        }
-        &[disabled],
-        &.disabled {
-            &,
-            &:hover,
-            &.hover,
-            &:focus,
-            &.focus,
-            &:active,
-            &.active {
+            &[inverted] {
+                color: color(--icon-button-highlight-rgb, 0.32);
                 background: transparent;
 
-                .IconButton_icon {
-                    color: color(--button-foreground-rgb, 0.32);
+                &::before,
+                &::after {
+                    border-color: transparent;
                 }
             }
         }
     }
 
-    // sizes (compact, small, large)
-    &___compact {
-        padding: 6px;
-        width: 28px;
-        height: 28px;
+    // sizes (xsmall, small (default), medium, large)
+    &__xsmall {
+        min-width: 24px;
+        height: 24px;
+
+        &[compact] {
+            min-width: 20px;
+            height: 20px;
+        }
     }
-    &___small {
-        padding: 8px;
-        width: 32px;
+    &,
+    &__small {
+        min-width: 32px;
         height: 32px;
+        padding: 0 8px;
+
+        &[compact] {
+            min-width: 28px;
+            height: 28px;
+            padding: 0 6px;
+        }
     }
-    &___large {
-        padding: 10px;
-        width: 48px;
+    &__medium {
+        min-width: 40px;
+        height: 40px;
+
+        &[compact] {
+            min-width: 36px;
+            height: 36px;
+        }
+    }
+    &__large {
+        min-width: 48px;
         height: 48px;
 
-        // the large IconButton uses a non-standard icon size
-        .IconButton_icon {
-            padding: 4px;
-            width: 28px;
-            height: 28px;
-
-            &::before {
-                font-size: 24/10 * 1rem;
-            }
+        &[compact] {
+            min-width: 44px;
+            height: 44px;
         }
     }
 

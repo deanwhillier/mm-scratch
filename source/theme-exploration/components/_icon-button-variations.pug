@@ -1,0 +1,103 @@
+mixin iconButtonVariations()
+    +label({text: "Default"}, labelClasses)
+    div.inner-container
+        +iconButton({
+            size: "small",
+            iconGlyph: "icon-emoticon-happy-outline",
+        }, "ThemedElement")
+        +iconButton({
+            size: "small",
+            iconGlyph: "icon-emoticon-happy-outline",
+            label: "Default",
+        }, "ThemedElement")
+    div.inner-container
+        +iconButton({
+            size: "small",
+            iconGlyph: "icon-emoticon-happy-outline",
+            toggled: true,
+        }, "ThemedElement")
+        +iconButton({
+            size: "small",
+            iconGlyph: "icon-emoticon-happy-outline",
+            label: "Toggled",
+            toggled: true,
+        }, "ThemedElement")
+    div.inner-container
+        +iconButton({
+            size: "small",
+            iconGlyph: "icon-emoticon-happy-outline",
+            destructive: true,
+        }, "ThemedElement")
+        +iconButton({
+            size: "small",
+            iconGlyph: "icon-emoticon-happy-outline",
+            label: "Destructive",
+            destructive: true,
+        }, "ThemedElement")
+    div.inner-container
+        +iconButton({
+            size: "small",
+            iconGlyph: "icon-emoticon-happy-outline",
+            disabled: true,
+        }, "ThemedElement")
+        +iconButton({
+            size: "small",
+            iconGlyph: "icon-emoticon-happy-outline",
+            label: "Disabled",
+            disabled: true,
+        }, "ThemedElement")
+    +label({text: "Inverted"}, labelClasses)
+    div.inner-container
+        +iconButton({
+            size: "small",
+            iconGlyph: "icon-emoticon-happy-outline",
+            inverted: true,
+        }, "ThemedElement")
+        +iconButton({
+            size: "small",
+            iconGlyph: "icon-emoticon-happy-outline",
+            label: "Default",
+            inverted: true,
+        }, "ThemedElement")
+    div.inner-container
+        +iconButton({
+            size: "small",
+            iconGlyph: "icon-emoticon-happy-outline",
+            inverted: true,
+            toggled: true,
+        }, "ThemedElement")
+        +iconButton({
+            size: "small",
+            iconGlyph: "icon-emoticon-happy-outline",
+            label: "Toggled",
+            inverted: true,
+            toggled: true,
+        }, "ThemedElement")
+    div.inner-container
+        +iconButton({
+            size: "small",
+            iconGlyph: "icon-emoticon-happy-outline",
+            inverted: true,
+            destructive: true,
+        }, "ThemedElement")
+        +iconButton({
+            size: "small",
+            iconGlyph: "icon-emoticon-happy-outline",
+            label: "Destructive",
+            inverted: true,
+            destructive: true,
+        }, "ThemedElement")
+    div.inner-container
+        +iconButton({
+            size: "small",
+            iconGlyph: "icon-emoticon-happy-outline",
+            inverted: true,
+            disabled: true,
+        }, "ThemedElement")
+        +iconButton({
+            size: "small",
+            iconGlyph: "icon-emoticon-happy-outline",
+            label: "Disabled",
+            inverted: true,
+            disabled: true,
+        }, "ThemedElement")

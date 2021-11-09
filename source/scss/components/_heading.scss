@@ -10,13 +10,18 @@
     overflow: hidden;
 
     &.Heading___small {
-        font-size: 12/10 * 1rem;
+        font-size: 12px;
         line-height: (16/12);
     }
 
     &.Heading___large {
-        font-size: 16/10 * 1rem;
+        font-size: 16px;
         line-height: (20/16);
+    }
+
+    &.Heading___xlarge {
+        font-size: 22px;
+        line-height: (26/22);
     }
 
     &.Heading___wrap {

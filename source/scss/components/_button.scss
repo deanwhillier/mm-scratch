@@ -3,29 +3,27 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    padding: 12px 16px;
+    padding: 0 16px;
     height: 40px;
-    font-family: "Open Sans", sans-serif;
-    font-size: 14/10*1rem;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
     font-weight: 600;
     line-height: 1;
-    color: color(--center-channel-color-rgb);
     text-decoration: none;
     border-radius: 4px;
     border: none;
     outline: none;
-    background: color(--center-channel-color-rgb, 0);
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     overflow: hidden;
     cursor: pointer;
 
     // elements (icons, label)
     .Button_icon {
-        color: color(--center-channel-color-rgb);
+        z-index: 2;
     }
-
     .Button_label {
         margin: 0 8px;
+        z-index: 2;
 
         &:first-child {
             margin-left: 0;
@@ -36,168 +34,240 @@
     }
 
     // states
-    // - (::before for fill, ::after for border)
+    // - ::before used for background shades, ::after used for inside border
     &::before,
     &::after {
-        content: "";
+        content: '';
         position: absolute;
         top: 0;
         left: 0;
         bottom: 0;
         right: 0;
         border-radius: 4px;
-        border: none;
+        border: solid 2px transparent;
         background: transparent;
-        z-index: 0;
-    }
-    &::before {
-        opacity: 0;
-        background: color(--black);
-    }
-    &::after {
-        border: solid 1px transparent;
+        z-index: 1;
     }
 
-    &:hover,
-    &.hover,
-    &:focus,
-    &.focus {
-        &::before {
-            opacity: 0.08;
+    // - primary states
+
+    &__primary {
+        color: color(--button-foreground-rgb);
+        background: color(--button-background-rgb);
+
+        &[destructive] {
+            background: color(--button-destructive-rgb);
         }
-        &::after {
-            opacity: 1;
+
+        &[inverted] {
+            color: color(--button-background-rgb);
+            background: color(--button-foreground-rgb);
         }
-    }
-    &:active,
-    &.active {
-        &::before {
-            opacity: 0.12;
-        }
-        &::after {
-            opacity: 1;
-        }
-    }
-
-    &[disabled],
-    .disabled {
-        cursor: not-allowed;
-
-        &,
-        &:hover,
-        &.hover,
-        &:focus,
-        &.focus,
-        &:active,
-        &.active {
-            background: color(--center-channel-color-rgb, 0.1);
-
-            .Button_icon,
-            .Button_label {
-                color: color(--center-channel-color-rgb, 0.5);
-            }
-
-            &::before,
-            &::after {
-                opacity: 0;
-            }
-        }
-    }
-
-    // styles (primary, secondary, tertiary)
-    &.Button___primary:not([disabled]) {
-        color: color(--button-color-rgb);
-        background: color(--button-bg-rgb);
 
         &:hover,
-        &.hover,
-        &:focus,
-        &.focus {
+        &.hover {
             &::before {
-                opacity: 0.2;
+                background: color(--button-lowlight-rgb, 0.08);
             }
-        }
-        &:focus,
-        &.focus {
-            &::after {
-                border-color: color(--link-color-rgb);
-                border-width: 2px;
+
+            &[inverted] {
+                &::before {
+                    background: color(--button-background-rgb, 0.08);
+                }
             }
         }
         &:active,
         &.active {
             &::before {
-                opacity: 0.32;
+                background: color(--button-lowlight-rgb, 0.16);
+            }
+
+            &[inverted] {
+                &::before {
+                    background: color(--button-background-rgb, 0.16);
+                }
             }
         }
-    
-        .Button_icon {
-            color: color(--button-color-rgb);
+        &:focus,
+        &.focus {
+            &::after {
+                border-color: color(--button-highlight-rgb, 0.32);
+            }
+
+            &[inverted] {
+                &::after {
+                    border-color: color(--button-background-rgb, 0.32);
+                }
+            }
+        }
+        &:focus:not(:focus-visible) {
+            &::after {
+                border-color: transparent;
+            }
+
+            &[inverted] {
+                &::after {
+                    border-color: transparent;
+                }
+            }
+        }
+        &:focus-visible {
+            &::after {
+                border-color: color(--button-highlight-rgb, 0.32);
+            }
+
+            &[inverted] {
+                &::after {
+                    border-color: color(--button-background-rgb, 0.32);
+                }
+            }
+        }
+
+        &[disabled] {
+            cursor: not-allowed;
+
+            &,
+            &:hover,
+            &.hover,
+            &:focus,
+            &:focus-visible,
+            &.focus,
+            &:active,
+            &.active {
+                color: color(--button-disabled-rgb, 0.32);
+                background: color(--button-disabled-rgb, 0.08);
+
+                &::before,
+                &::after {
+                    border: none;
+                    background: none;
+                }
+            }
         }
     }
 
-    &.Button___secondary:not([disabled]),
-    &.Button___tertiary:not([disabled]) {
-        color: color(--button-bg-rgb);
-        background: color(--button-color-rgb);
+    // - secondary states
 
-        &::before {
-            background: color(--button-bg-rgb);
-        }
+    &__secondary {
+        color: color(--button-background-rgb);
+        background: color(--button-background-rgb, 0);
+
         &::after {
-            border-color:color(--button-bg-rgb);
+            border-width: 1px;
+            border-color: color(--button-background-rgb);
+        }
+
+        &[destructive] {
+            color: color(--button-destructive-rgb);
+
+            &::after {
+                border-color: color(--button-destructive-rgb);
+            }
+        }
+
+        &[inverted] {
+            color: color(--button-foreground-rgb);
+
+            &::after {
+                border-color: color(--button-foreground-rgb);
+            }
         }
 
         &:hover,
-        &.hover,
-        &:focus,
-        &.focus {
-            &:before {
-                opacity: 0.06;
+        &.hover {
+            &::before {
+                background: color(--button-background-rgb, 0.08);
             }
-        }
-        &:focus,
-        &.focus {
-            &:after {
-                border-color: color(--link-color-rgb);
-                border-width: 2px;
+
+            &[destructive] {
+                &::before {
+                    background: color(--button-destructive-rgb, 0.08);
+                }
+            }
+
+            &[inverted] {
+                &::before {
+                    background: color(--button-foreground-rgb, 0.08);
+                }
             }
         }
         &:active,
         &.active {
-            &:before {
-                opacity: 0.12;
+            &::before {
+                background: color(--button-background-rgb, 0.16);
+            }
+
+            &[destructive] {
+                &::before {
+                    background: color(--button-destructive-rgb, 0.16);
+                }
+            }
+
+            &[inverted] {
+                &::before {
+                    background: color(--button-foreground-rgb, 0.16);
+                }
             }
         }
-    
-        .Button_icon {
-            color: color(--button-bg-rgb);
-        }
-    }
-
-    &.Button___tertiary:not([disabled]) {
-        &::after {
-            border-color: transparent;
-        }
-        &:focus
+        &:focus,
         &.focus {
             &::after {
-                border-color: color(--button-bg-rgb);
                 border-width: 2px;
             }
         }
+        &:focus:not(:focus-visible) {
+            &::after {
+                border-width: 1px;
+            }
+        }
+        &:focus-visible {
+            &::after {
+                border-width: 2px;
+            }
+        }
+
+        &[disabled] {
+            cursor: not-allowed;
+
+            &,
+            &:hover,
+            &.hover,
+            &:focus,
+            &:focus-visible,
+            &.focus,
+            &:active,
+            &.active {
+                color: color(--button-disabled-rgb, 0.32);
+                background: transparent;
+
+                &::before,
+                &::after {
+                    border: none;
+                    background: none;
+                }
+
+                &::after {
+                    border: 1px solid color(--button-disabled-rgb, 0.32);
+                }
+            }
+        }
     }
 
-    // sizes (small, large, full width)
-    &___small {
+    // sizes (xsmall, small (default), large, full width)
+    &__xsmall {
         padding: 10px 12px;
         height: 32px;
     }
-    &___large {
+    &,
+    &__small {
+        padding: 10px 12px;
+        height: 32px;
+    }
+    &__large {
         padding: 14px 20px;
         height: 48px;
     }
-    &___fullWidth {
+    &__fullWidth {
         width: 100%;
 
         .Button_icon {
@@ -211,10 +281,11 @@
     // animation
     .enable-animations & {
         &::before {
-            transition: opacity $animation-speed-shorter 0s ease-in-out;
+            transition: background $animation-speed-shorter 0s ease-in-out;
         }
         &::after {
-            transition: border-color $animation-speed-shorter 0s ease-in-out;
+            transition: border-color $animation-speed-shorter 0s ease-in-out,
+                border-width $animation-speed-shorter 0s ease-in-out;
         }
     }
 }

@@ -1,0 +1,144 @@
+@import '../../../node_modules/@mattermost/compass-icons/css/compass-icons.css';
+@import '../shared/typography';
+
+@import '../components/base';
+@import '../components/variables';
+@import '../components/heading';
+@import '../components/label';
+@import '../components/icon';
+@import '../components/icon-button';
+@import '../components/button';
+
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+    background: black;
+}
+.theme {
+    display: flex;
+    justify-content: space-between;
+    align-items: space-around;
+    gap: 10px;
+    width: 100%;
+    background: black;
+
+    // default variables
+    --foreground: var(--center-channel-text);
+    --foreground-rbg: var(--center-channel-text-rgb);
+    --background: var(--center-channel-bg);
+    --background-rgb: var(--center-channel-bg-rgb);
+
+    .IconButton {
+        --icon-button-foreground-rgb: var(--center-channel-color-rgb);
+        --icon-button-background-rgb: var(--button-bg-rgb);
+        --icon-button-highlight-rgb: var(--button-color-rgb);
+        --icon-button-destructive-rgb: var(--dnd-indicator-rgb);
+    }
+    .Button {
+        --button-foreground-rgb: var(--button-color-rgb);
+        --button-background-rgb: var(--button-bg-rgb);
+        --button-destructive-rgb: var(--dnd-indicator-rgb);
+        --button-disabled-rgb: var(--center-channel-color-rgb);
+        --button-lowlight-rgb: 0, 0, 0;
+        --button-highlight-rgb: 255, 255, 255;
+    }
+
+    > * {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex: 1;
+        height: 100%;
+    }
+
+    .global-header {
+        --global-header-background: var(--sidebar-teambar-bg);
+        --global-header-background-rgb: var(--sidebar-teambar-bg-rgb);
+        --global-header-text: var(--sidebar-header-text-color);
+        --global-header-text-rgb: var(--sidebar-header-text-color-rgb);
+        color: var(--global-header-text);
+        background: var(--global-header-background);
+
+        .IconButton {
+            .sub-themed & {
+                --icon-button-foreground-rgb: var(--global-header-text-rgb);
+                --icon-button-background-rgb: var(--button-bg-rgb);
+                --icon-button-highlight-rgb: var(--global-header-text-rgb);
+                --icon-button-destructive-rgb: var(--dnd-indicator-rgb);
+            }
+        }
+        .Button {
+            .sub-themed & {
+                --button-foreground-rgb: var(--button-bg-rgb);
+                --button-background-rgb: var(--button-color-rgb);
+                --button-destructive-rgb: var(--dnd-indicator-rgb);
+                --button-disabled-rgb: var(--center-channel-bg-rgb);
+                --button-highlight-rgb: 0, 0, 0;
+                --button-lowlight-rgb: 255, 255, 255;
+            }
+        }
+    }
+
+    .team-sidebar {
+        --sidebar-teambar-bg: var(--sidebar-header-bg);
+        --sidebar-teambar-bg-rgb: var(--sidebar-header-bg-rgb);
+        color: var(--sidebar-header-text-color);
+        background: var(--sidebar-teambar-bg);
+
+        .IconButton {
+            .sub-themed & {
+                --icon-button-foreground-rgb: var(--sidebar-text-rgb);
+                --icon-button-background-rgb: var(--button-bg-rgb);
+                --icon-button-highlight-rgb: var(--sidebar-text-rgb);
+                --icon-button-destructive-rgb: var(--dnd-indicator-rgb);
+            }
+        }
+    }
+
+    .lhs {
+        color: var(--sidebar-text);
+        background: var(--sidebar-bg);
+
+        .IconButton {
+            .sub-themed & {
+                --icon-button-foreground-rgb: var(--sidebar-text-rgb);
+                --icon-button-background-rgb: var(--button-bg-rgb);
+                --icon-button-highlight-rgb: var(--sidebar-text-rgb);
+                --icon-button-destructive-rgb: var(--dnd-indicator-rgb);
+            }
+        }
+    }
+
+    .center-channel {
+        color: var(--center-channel-color);
+        background: var(--center-channel-bg);
+    }
+
+    .rhs {
+        color: var(--center-channel-color);
+        background: var(--center-channel-bg);
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 20px;
+        min-height: 300px;
+    }
+
+    .inner-container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+    }
+}

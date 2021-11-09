@@ -1,23 +1,37 @@
 .Label {
     position: relative;
-    font-family: "Open Sans", sans-serif;
-    font-size: 14/10*1rem;
-    line-height: (18/14);
+    font-family: 'Open Sans', sans-serif;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
 
-    &.Label___small {
-        font-size: 12/10*1rem;
-        line-height: (16/12);
+    &.Label___xsmall {
+        font-size: 12px;
+        line-height: 16px;
     }
-    
+
+    &.Label___small {
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    &,
+    &.Label___medium {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
     &.Label___large {
-        font-size: 16/10*1rem;
-        line-height: (20/16);
+        font-size: 18px;
+        line-height: 22px;
     }
 
     &.Label___wrap {
         white-space: normal;
+    }
+
+    // animation
+    .enable-animations & {
+        transition: color $animation-speed-shorter 0s ease-in-out;
     }
 }
