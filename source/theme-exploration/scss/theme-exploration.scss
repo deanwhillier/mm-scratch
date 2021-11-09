@@ -1,13 +1,7 @@
 @import '../../../node_modules/@mattermost/compass-icons/css/compass-icons.css';
-@import '../shared/typography';
+@import '../scss/shared/typography';
 
-@import '../components/base';
-@import '../components/variables';
-@import '../components/heading';
-@import '../components/label';
-@import '../components/icon';
-@import '../components/icon-button';
-@import '../components/button';
+@import '../../components/scss/components';
 
 body {
     display: flex;

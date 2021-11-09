@@ -1,5 +1,7 @@
 @import '/node_modules/@mattermost/compass-icons/css/compass-icons.css';
+
 @import '../scss/shared/typography';
+@import '../components/scss/components';
 
 @import './variables';
 @import './mixins';
@@ -14,11 +16,3 @@
 
 @import './sidebars/sidebars';
 @import './panels/panels';
-
-@import '../scss/components/variables';
-@import '../scss/components/label';
-@import '../scss/components/heading';
-@import '../scss/components/icon';
-@import '../scss/components/icon-button';
-@import '../scss/components/button';
-@import '../scss/components/team-button';
