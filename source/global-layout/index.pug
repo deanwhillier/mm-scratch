@@ -5,7 +5,7 @@ html(lang="en")
         meta(name="viewport" content="width=device-width, initial-scale=1.0")
         title Global Layout
         link(rel="stylesheet" type="text/css" href="https://yarnpkg.com/en/package/normalize.css")
-        link(rel="stylesheet" type="text/css" href="/build/css/global-layout/main.css")
+        link(rel="stylesheet" type="text/css" href="./css/main.css")
     body.global-layout.enable-animations
         include ../components/_heading
         include ../components/_label
@@ -13,7 +13,7 @@ html(lang="en")
         include ../components/_icon-button
         include ../components/_team-button
 
-        div#root.Teams--open.AppsBar--open
+        div#root.theme-denim.Teams--open.AppsBar--open
             div#GlobalBanner.Toast
             div.AppContainer
                 header#GlobalHeader
@@ -21,7 +21,6 @@ html(lang="en")
                         +iconButton({
                             size: "compact",
                             iconGlyph: "icon-products",
-                            label: "Icon button",
                             inverted: true,
                         }, "ProductsButton")
                         +icon({
@@ -34,7 +33,6 @@ html(lang="en")
                         +iconButton({
                             size: "compact",
                             iconGlyph: "icon-apps",
-                            label: "Apps Menu",
                             inverted: true
                         }, "RHSBackButton mobile--visible")
                 section.ProductContainer
@@ -44,35 +42,45 @@ html(lang="en")
                             +teamButton()
                             +teamButton()
                         section#LHS.Sidebar.Sidebar__left
+                    // main#Main.Panels
+                    //    section.Panel.Panel__channels
+                    //        header
+                    //            +iconButton({
+                    //                size: "compact",
+                    //                iconGlyph: "icon-menu-variant",
+                    //                inverted: true,
+                    //            }, "MobileMenu mobile--visible")
+                    //            +iconButton({
+                    //                size: "compact",
+                    //                iconGlyph: "icon-star-outline",
+                    //            }, "desktop--visible")
+                    //            +heading({text: "UX Design", size: "large"})
+                    //        section
                     main#Main.Panel.Panel__main
-                        header
-                            +iconButton({
-                                size: "compact",
-                                iconGlyph: "icon-menu-variant",
-                                label: "Menu",
-                                inverted: true,
-                            }, "MobileMenu mobile--visible")
-                            +iconButton({
-                                size: "compact",
-                                iconGlyph: "icon-star-outline",
-                                label: "Favorite",
-                            }, "desktop--visible")
-                            +heading({text: "UX Design", size: "large"})
-                        section
+                         header
+                             +iconButton({
+                                 size: "compact",
+                                 iconGlyph: "icon-menu-variant",
+                                 inverted: true,
+                             }, "MobileMenu mobile--visible")
+                             +iconButton({
+                                 size: "compact",
+                                 iconGlyph: "icon-star-outline",
+                             }, "desktop--visible")
+                             +heading({text: "UX Design", size: "large"})
+                         section
                     div#RHS.Panels.stacked
                         section#Threads.Panel.Panel__threads
                             header
                                 +iconButton({
                                     size: "compact",
                                     iconGlyph: "icon-arrow-back-ios",
-                                    label: "Go back",
                                     inverted: true,
                                 }, "RHSBackButton mobile--visible")
                                 +heading({text: "Thread", size: "large"})
                                 +iconButton({
                                     size: "compact",
                                     iconGlyph: "icon-close",
-                                    label: "Go back",
                                 }, "RHSBackButton desktop--visible")
                             section
                         section#UserProfile.Panel.Panel__userProfile
@@ -80,13 +88,11 @@ html(lang="en")
                                 +iconButton({
                                     size: "compact",
                                     iconGlyph: "icon-arrow-back-ios",
-                                    label: "Go back",
                                     inverted: true,
                                 }, "RHSBackButton mobile--visible")
                                 +iconButton({
                                     size: "compact",
                                     iconGlyph: "icon-arrow-back-ios",
-                                    label: "Go back",
                                 }, "RHSBackButton desktop--visible")
                                 +heading({text: "User profile", size: "large"})
                             section
@@ -95,13 +101,11 @@ html(lang="en")
                                 +iconButton({
                                     size: "compact",
                                     iconGlyph: "icon-arrow-back-ios",
-                                    label: "Go back",
                                     inverted: true,
                                 }, "RHSBackButton mobile--visible")
                                 +iconButton({
                                     size: "compact",
                                     iconGlyph: "icon-arrow-back-ios",
-                                    label: "Go back",
                                 }, "RHSBackButton desktop--visible")
                                 +heading({text: "Message User", size: "large"})
                             section
@@ -112,7 +116,6 @@ html(lang="en")
                                 +iconButton({
                                     size: "compact",
                                     iconGlyph: "icon-view-grid-plus-outline",
-                                    label: "Apps Menu",
                                 }, "RHSBackButton desktop--visible")
         
-        script(src="/build/js/global-layout/main-min.js" type="text/javascript")
+        script(src="./js/main-min.js" type="text/javascript")
