@@ -1,6 +1,4 @@
-
 class MenuController {
-    
     constructor(elementReference, startingNumber = 1) {
         this.menuContainerRef = document.querySelector(elementReference);
         this.menu = this.menuContainerRef.querySelector('.Menu');
@@ -9,12 +7,15 @@ class MenuController {
         this.menuPanels = Array.from(this.menuContainerRef.querySelectorAll('.Menu_panel'));
 
         this.activeMenu = 0;
-        this.animationEnabled = document.querySelector('body').classList.contains('enable-animations');
+        this.animationEnabled = document
+            .querySelector('body')
+            .classList.contains('enable-animations');
         this.animatingElements = [];
 
         // handle header button clicks
-        const headerBackButtonRefs = this.menuContainerRef.querySelectorAll('.MenuHeader_backButton');
-        headerBackButtonRefs.forEach(element => {
+        const headerBackButtonRefs =
+            this.menuContainerRef.querySelectorAll('.MenuHeader_backButton');
+        headerBackButtonRefs.forEach((element) => {
             element.addEventListener('click', (event) => {
                 this.handleHeaderBackButtonClick(event);
             });
@@ -22,7 +23,7 @@ class MenuController {
 
         // handle menu button clicks
         const menuButtonRefs = this.menuContainerRef.querySelectorAll('.Button');
-        menuButtonRefs.forEach(element => {
+        menuButtonRefs.forEach((element) => {
             element.addEventListener('click', (event) => {
                 this.handleMenuButtonClick(event);
             });
@@ -32,7 +33,7 @@ class MenuController {
         this.menuHeader.setAttribute('data-height', this.menuHeader.offsetHeight);
 
         // determine menu panel heights
-        this.menuPanels.forEach(panel => {
+        this.menuPanels.forEach((panel) => {
             panel.setAttribute('data-panel-height', panel.offsetHeight);
         });
 
@@ -42,18 +43,18 @@ class MenuController {
         // listeners
         this.menu.addEventListener('transitionend', (event) => {
             this.handleMenuTransitionEnd(event);
-        })
+        });
         this.menu.addEventListener('transitionstart', (event) => {
             this.handleMenuTransitionStart(event);
-        })
+        });
 
         // allow active styles to work in mobile safari
-        document.addEventListener("touchstart", function(){}, true);
+        document.addEventListener('touchstart', function () {}, true);
     }
 
-    handleHeaderBackButtonClick = (event) => {
-        this.setActiveMenuPanel( this.activeMenu - 1);
-    }
+    handleHeaderBackButtonClick = () => {
+        this.setActiveMenuPanel(this.activeMenu - 1);
+    };
 
     handleMenuButtonClick = (event) => {
         event.preventDefault();
@@ -61,25 +62,34 @@ class MenuController {
         if (menuItem.getAttribute('data-has-submenu') !== null) {
             this.setActiveMenuPanel(this.activeMenu + 1);
         }
-    }
+    };
 
     handleMenuTransitionStart = (event) => {
-        if(event.target === this.menu || event.target === this.menuPanelContainer || this.menuPanels.includes(event.target)) {
+        if (
+            event.target === this.menu ||
+            event.target === this.menuPanelContainer ||
+            this.menuPanels.includes(event.target)
+        ) {
             this.animatingElements.push(event.target);
         }
-    }
+    };
     handleMenuTransitionEnd = (event) => {
-        this.animatingElements = this.animatingElements.filter(element => element !== event.target);
+        this.animatingElements = this.animatingElements.filter(
+            (element) => element !== event.target
+        );
         if (this.animatingElements.length === 0) {
             this.removeAnimationClasses();
         }
-    }
+    };
 
     setMenuHeight(value = 0) {
         this.menu.style.height = `${value}px`;
     }
     getMenuHeight(panel = this.currentPanel) {
-        return parseInt(panel.getAttribute('data-panel-height'), 10) + parseInt(this.menuHeader.getAttribute('data-height'), 10);
+        return (
+            parseInt(panel.getAttribute('data-panel-height'), 10) +
+            parseInt(this.menuHeader.getAttribute('data-height'), 10)
+        );
     }
 
     setAnimationClasses(currentPanel, nextPanel) {
@@ -105,7 +115,7 @@ class MenuController {
         }
         const currentPanel = this.activeMenuPanel;
         let nextPanel;
-        if (this.activeMenu < index){
+        if (this.activeMenu < index) {
             nextPanel = this.nextMenuPanel;
         } else {
             nextPanel = this.previousMenuPanel;
@@ -113,7 +123,7 @@ class MenuController {
         nextPanel.focus();
         this.setAnimationClasses(currentPanel, nextPanel);
         setTimeout(() => {
-            if (this.activeMenu < index){
+            if (this.activeMenu < index) {
                 this.setMenuHeight(this.getMenuHeight(this.nextMenuPanel));
             } else {
                 this.setMenuHeight(this.getMenuHeight(this.previousMenuPanel));
@@ -132,7 +142,6 @@ class MenuController {
     get nextMenuPanel() {
         return this.menuPanels[this.activeMenu + 1] || null;
     }
-
 }
 
 const menu = new MenuController('.MenuContainer');
