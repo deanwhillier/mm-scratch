@@ -2,8 +2,6 @@
     // small views
     // - all small views
     @include media-width(null, $width-tablet-small-max) {
-        @include position(absolute, 0px, 0px);
-
         > section {
             @include panel-background(
                 var(--sidebar-lhs-color-background),
@@ -11,15 +9,6 @@
                 var(--shadow-elevation-2),
                 true
             );
-        }
-
-        #root.MobileMenu--open & {
-            transform: translateX(var(--mobile-menu-width));
-
-            // disable interaction on child elements
-            > * {
-                pointer-events: none;
-            }
         }
     }
     // mobile only

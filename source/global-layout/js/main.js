@@ -17,10 +17,16 @@ const WindowWidths = {
 
 (function () {
     const root = document.getElementById('root');
+    const Main = document.getElementById('Main');
     const RHS = document.getElementById('RHS');
+    const MainPanels = Main.getElementsByClassName('Panel');
     const RHSPanels = RHS.getElementsByClassName('Panel');
 
     let currentWindowWidth;
+
+    const state = {
+        globalThreadsEnabled: false,
+    };
 
     Object.values(WindowWidths).map((queryDefinition) => {
         const query = window.matchMedia(queryDefinition);
@@ -36,8 +42,21 @@ const WindowWidths = {
                 toggleGlobalBanner();
                 break;
             }
-            // open/close the mobile menu
+            // open/close the team sidebar
             case 'Digit2': {
+                toggleTeamSidebar();
+                break;
+            }
+            // open/close the apps sidebar
+            case 'Digit3': {
+                if (currentWindowWidth === 'MOBILE' || currentWindowWidth === 'TABLET_SMALL') {
+                    return;
+                }
+                toggleAppsSidebar();
+                break;
+            }
+            // open/close the mobile menu
+            case 'Digit4': {
                 if (currentWindowWidth !== 'MOBILE' && currentWindowWidth !== 'TABLET_SMALL') {
                     return;
                 }
@@ -45,28 +64,28 @@ const WindowWidths = {
                 closeRHS();
                 break;
             }
-            // open/close the team sidebar
-            case 'Digit3': {
-                toggleTeamSidebar();
-                break;
-            }
             // RHS: open and add panels
-            case 'Digit4': {
+            case 'Digit5': {
                 toggleMobileMenu(true);
                 pushRHS();
                 break;
             }
             // RHS: remove panels and close
-            case 'Digit5': {
+            case 'Digit6': {
                 popRHS();
                 break;
             }
-            // open/close the apps sidebar
-            case 'Digit6': {
-                if (currentWindowWidth === 'MOBILE' || currentWindowWidth === 'TABLET_SMALL') {
-                    return;
-                }
-                toggleAppsSidebar();
+            // Main: switch between channels and threads
+            case 'Digit7': {
+                toggleMobileMenu(true);
+                toggleGlobalThreads();
+                toggleGlobalThreadPanel(true);
+                closeRHS();
+                break;
+            }
+            // Main: reveal global thread panel
+            case 'Digit8': {
+                toggleGlobalThreadPanel();
                 break;
             }
         }
@@ -80,14 +99,28 @@ const WindowWidths = {
     });
 
     // mobile menu button
-    document.querySelector('.MobileMenu').addEventListener('click', (event) => {
-        event.stopPropagation();
-        event.target.blur();
-        toggleMobileMenu();
-        closeRHS();
+    document.querySelectorAll('.MobileMenu').forEach((menuButton) =>
+        menuButton.addEventListener('click', (event) => {
+            event.stopPropagation();
+            event.target.blur();
+            toggleMobileMenu();
+            closeRHS();
+        })
+    );
+
+    // main sub panel back button
+    document.querySelectorAll('.MainBackButton').forEach((button) => {
+        button.addEventListener('click', (event) => {
+            event.stopPropagation();
+            event.target.blur();
+            const lastActivePanel = Array.from(MainPanels)
+                .filter((panel) => panel.classList.contains('active'))
+                .pop();
+            lastActivePanel.classList.remove('active');
+        });
     });
 
-    // rhs back button
+    // rhs sub panel back button
     document.querySelectorAll('.RHSBackButton').forEach((button) =>
         button.addEventListener('click', (event) => {
             event.stopPropagation();
@@ -120,6 +153,21 @@ const WindowWidths = {
 
     function toggleMobileMenu(forceClose = false) {
         root.classList[forceClose ? 'remove' : 'toggle']('MobileMenu--open');
+    }
+
+    function toggleGlobalThreads(forceClose = false) {
+        state.globalThreadsEnabled = forceClose ? false : !state.globalThreadsEnabled;
+        root.classList[forceClose ? 'remove' : 'toggle']('GlobalThreads--active');
+    }
+
+    function toggleGlobalThreadPanel(forceClose = false) {
+        let close = forceClose;
+        if (!state.globalThreadsEnabled) {
+            close = true;
+        }
+        document
+            .querySelector('#Main .Panel__thread')
+            .classList[close ? 'remove' : 'toggle']('active');
     }
 
     function closeRHS() {

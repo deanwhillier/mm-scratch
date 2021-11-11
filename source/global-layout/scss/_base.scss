@@ -46,3 +46,20 @@ body,
         display: initial;
     }
 }
+
+// channels vs global threads view
+#root:not(.GlobalThreads--active) {
+    #Main {
+        .Panel__threads,
+        .Panel__thread {
+            display: none;
+        }
+    }
+}
+#root.GlobalThreads--active {
+    #Main {
+        .Panel__channels {
+            display: none;
+        }
+    }
+}

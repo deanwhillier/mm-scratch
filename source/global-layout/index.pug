@@ -38,42 +38,47 @@ html(lang="en")
                             +teamButton()
                             +teamButton()
                         section#LHS.Sidebar.Sidebar__left
-                    // main#Main.Panels
-                    //    section.Panel.Panel__channels
-                    //        header
-                    //            +iconButton({
-                    //                size: "compact",
-                    //                iconGlyph: "icon-menu-variant",
-                    //                inverted: true,
-                    //            }, "MobileMenu mobile--visible")
-                    //            +iconButton({
-                    //                size: "compact",
-                    //                iconGlyph: "icon-star-outline",
-                    //            }, "desktop--visible")
-                    //            +heading({text: "UX Design", size: "large"})
-                    //        section
-                    main#Main.Panel.Panel__main
-                         header
-                             +iconButton({
-                                 size: "compact",
-                                 iconGlyph: "icon-menu-variant",
-                                 inverted: true,
-                             }, "MobileMenu mobile--visible")
-                             +iconButton({
-                                 size: "compact",
-                                 iconGlyph: "icon-star-outline",
-                             }, "desktop--visible")
-                             +heading({text: "UX Design", size: "large"})
-                         section
-                    div#RHS.Panels.stacked
-                        section#Threads.Panel.Panel__threads
+                    main#Main.Panels
+                        section.Panel.Panel__first.Panel__channels
+                            header
+                                +iconButton({
+                                    size: "compact",
+                                    iconGlyph: "icon-menu-variant",
+                                    inverted: true,
+                                }, "MobileMenu mobile--visible")
+                                +iconButton({
+                                    size: "compact",
+                                    iconGlyph: "icon-star-outline",
+                                }, "desktop--visible")
+                                +heading({text: "Centre Channel", size: "large"})
+                            section
+                        section.Panel.Panel__first.Panel__threads
+                            header
+                                +iconButton({
+                                    size: "compact",
+                                    iconGlyph: "icon-menu-variant",
+                                    inverted: true,
+                                }, "MobileMenu mobile--visible")
+                                +heading({text: "Global Threads", size: "large"})
+                            section
+                        section.Panel.Panel__thread
+                            header
+                                +iconButton({
+                                    size: "compact",
+                                    iconGlyph: "icon-arrow-back-ios",
+                                    inverted: true,
+                                }, "MainBackButton mobile--visible")
+                                +heading({text: "Thread", size: "large"})
+                            section
+                    div#RHS.Panels.collapsable.stacked
+                        section#Threads.Panel.Panel__thread
                             header
                                 +iconButton({
                                     size: "compact",
                                     iconGlyph: "icon-arrow-back-ios",
                                     inverted: true,
                                 }, "RHSBackButton mobile--visible")
-                                +heading({text: "Thread", size: "large"})
+                                +heading({text: "RHS", size: "large"})
                                 +iconButton({
                                     size: "compact",
                                     iconGlyph: "icon-close",

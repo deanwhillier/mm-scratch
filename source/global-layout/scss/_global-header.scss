@@ -43,6 +43,9 @@
     // - all small views
     @include media-width(null, $width-tablet-small-max) {
         @include size(var(--mobile-menu-width), var(--global-header-height));
+
+        // animation
+        transition: width var(--animation-length-short) 0s ease-in-out;
     }
     // mobile only
     @include media-width(null, $width-mobile-max) {

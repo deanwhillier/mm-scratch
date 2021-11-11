@@ -556,6 +556,21 @@
       "pg" : 0,
       "sct" : 1
     },
+    "\/source\/global-layout\/scss\/panels\/_panel-thread.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 1,
+      "oAP" : "\/build\/global-layout\/css\/panels\/_panel-thread.css",
+      "oF" : 0,
+      "oS" : 1,
+      "pg" : 0,
+      "sct" : 1
+    },
     "\/source\/global-layout\/scss\/panels\/_panel-threads.scss" : {
       "aP" : 1,
       "bl" : 0,

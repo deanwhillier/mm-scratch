@@ -1,4 +1,4 @@
-.Panel__threads {
+.Panel__thread {
     // small views
     // - all small views
     @include media-width(null, $width-tablet-small-max) {
@@ -13,7 +13,9 @@
     // large views
     // - all large views
     @include media-width($width-tablet-large-min) {
-        max-width: 400px;
+        > header {
+            justify-content: space-between;
+        }
     }
     // - large tablet only
     @include media-width($width-tablet-large-min, $width-tablet-large-max) {
