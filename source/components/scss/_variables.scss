@@ -16,6 +16,13 @@ $animation-speed-longest: 0.5s;
         @return unquote('rgb(var(#{$rgb}))');
     }
 }
+@function hslColor($hsl, $alpha: 1) {
+    @if $alpha >= 0 and $alpha < 1 {
+        @return unquote('hsla(var(#{$hsl}), #{$alpha})');
+    } @else {
+        @return unquote('hsl(var(#{$hsl}))');
+    }
+}
 
 // CSS Variables
 :root {

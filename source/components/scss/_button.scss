@@ -1,4 +1,64 @@
 .Button {
+    // approach 1
+    // - colours provided directly
+    // - hex and rgb segments
+    // - uses opacity
+
+    --button-primary: #1c58d9;
+    --button-primary-rgb: 221, 77, 48;
+    --button-secondary: #ffffff;
+    --button-secondary-rgb: 255, 255, 255;
+    --button-neutral: #3f4350;
+    --button-neutral-rgb: 63, 67, 80;
+    --button-highlight: #000000;
+    --button-highlight-rgb: 0, 0, 0;
+    --button-destructive: #d24b4e;
+    --button-destructive-rgb: 210, 75, 78;
+
+    // approach 2
+    // - primary and destructive colours provided in hsl segments
+    // - all other colours are derived
+
+    --button-primary-hue: 221deg;
+    --button-primary-saturation: 77%;
+    --button-primary-lightness: 48%;
+
+    --button-primary-color: hsl(
+        var(--button-primary-hue),
+        var(--button-primary-saturation),
+        var(--button-primary-lightness)
+    );
+    --button-primary-color-hsl: var(--button-primary-hue), var(--button-primary-saturation),
+        var(--button-primary-lightness);
+    --button-secondary-color: hsl(var(--button-primary-hue), 25%, 99%);
+    --button-secondary-color-hsl: var(--button-primary-hue), 25%, 99%;
+    --button-neutral-color: hsl(var(--button-primary-hue), 25%, 15%);
+    --button-neutral-color-hsl: var(--button-primary-hue), 25%, 15%;
+    --button-highlight-color: hsl(var(--button-primary-hue), 25%, 98%);
+    --button-highlight-color-hsl: var(--button-primary-hue), 25%, 98%;
+    --button-lowlight-color: hsl(var(--button-primary-hue), 25%, 2%);
+    --button-lowlight-color-hsl: var(--button-primary-hue), 25%, 2%;
+    --button-destructive-color: hsl(359, 60%, 56%);
+    --button-destructive-color-hsl: 359, 60%, 56%;
+
+    // approach 3
+    // - primary, optional secondary for components that need and destructive colours provided in hsl segments
+    // - all other colours are derived
+    // - minimized use of transparency to maximize compatibility with a majority of backgrounds
+    // - adapt to light/dark surroundings
+
+    --button-background-hue: 221deg;
+
+    --button-primary-hue: 221deg;
+    --button-primary-hsl: 221deg, 77%, 48%;
+
+    --button-destructive-hue: 359deg;
+    --button-destructive-hsl: 359deg, 60%, 56%;
+
+    --button-light-hsl: var(--button-background-hue), 15%, 99%;
+    --button-mid-hsl: var(--button-background-hue), 15%, 50%;
+    --button-dark-hsl: var(--button-background-hue), 15%, 1%;
+
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -52,51 +112,51 @@
     // - primary states
 
     &__primary {
-        color: color(--button-foreground-rgb);
-        background: color(--button-background-rgb);
+        color: hslColor(--button-light-hsl);
+        background: hslColor(--button-primary-hsl);
 
         &[destructive] {
-            background: color(--button-destructive-rgb);
+            background: hslColor(--button-destructive-hsl);
         }
 
         &[inverted] {
-            color: color(--button-background-rgb);
-            background: color(--button-foreground-rgb);
+            color: hslColor(--button-primary-hsl);
+            background: hslColor(--button-light-hsl);
         }
 
         &:hover,
         &.hover {
             &::before {
-                background: color(--button-lowlight-rgb, 0.08);
+                background: hslColor(--button-dark-hsl, 0.08);
             }
 
             &[inverted] {
                 &::before {
-                    background: color(--button-background-rgb, 0.08);
+                    background: hslColor(--button-primary-hsl, 0.08);
                 }
             }
         }
         &:active,
         &.active {
             &::before {
-                background: color(--button-lowlight-rgb, 0.16);
+                background: hslColor(--button-dark-hsl, 0.16);
             }
 
             &[inverted] {
                 &::before {
-                    background: color(--button-background-rgb, 0.16);
+                    background: hslColor(--button-primary-hsl, 0.16);
                 }
             }
         }
         &:focus,
         &.focus {
             &::after {
-                border-color: color(--button-highlight-rgb, 0.32);
+                border-color: hslColor(--button-light-hsl, 0.48);
             }
 
             &[inverted] {
                 &::after {
-                    border-color: color(--button-background-rgb, 0.32);
+                    border-color: hslColor(--button-primary-hsl, 0.48);
                 }
             }
         }
@@ -113,12 +173,12 @@
         }
         &:focus-visible {
             &::after {
-                border-color: color(--button-highlight-rgb, 0.32);
+                border-color: hslColor(--button-light-hsl, 0.48);
             }
 
             &[inverted] {
                 &::after {
-                    border-color: color(--button-background-rgb, 0.32);
+                    border-color: hslColor(--button-primary-hsl, 0.48);
                 }
             }
         }
@@ -134,13 +194,15 @@
             &.focus,
             &:active,
             &.active {
-                color: color(--button-disabled-rgb, 0.32);
-                background: color(--button-disabled-rgb, 0.08);
+                color: hslColor(--button-dark-hsl, 0.32);
+                background: hslColor(--button-light-hsl);
 
-                &::before,
+                &::before {
+                    background: hslColor(--button-dark-hsl, 0.08);
+                }
+
                 &::after {
                     border: none;
-                    background: none;
                 }
             }
         }
@@ -149,63 +211,63 @@
     // - secondary states
 
     &__secondary {
-        color: color(--button-background-rgb);
-        background: color(--button-background-rgb, 0);
+        color: hslColor(--button-primary-color-hsl);
+        background: hslColor(--button-primary-color-hsl, 0);
 
         &::after {
             border-width: 1px;
-            border-color: color(--button-background-rgb);
+            border-color: hslColor(--button-primary-color-hsl);
         }
 
         &[destructive] {
-            color: color(--button-destructive-rgb);
+            color: hslColor(--button-destructive-color-hsl);
 
             &::after {
-                border-color: color(--button-destructive-rgb);
+                border-color: hslColor(--button-destructive-color-hsl);
             }
         }
 
         &[inverted] {
-            color: color(--button-foreground-rgb);
+            color: hslColor(--button-secondary-color-hsl);
 
             &::after {
-                border-color: color(--button-foreground-rgb);
+                border-color: hslColor(--button-secondary-color-hsl);
             }
         }
 
         &:hover,
         &.hover {
             &::before {
-                background: color(--button-background-rgb, 0.08);
+                background: hslColor(--button-primary-color-hsl, 0.08);
             }
 
             &[destructive] {
                 &::before {
-                    background: color(--button-destructive-rgb, 0.08);
+                    background: hslColor(--button-destructive-color-hsl, 0.08);
                 }
             }
 
             &[inverted] {
                 &::before {
-                    background: color(--button-foreground-rgb, 0.08);
+                    background: hslColor(--button-secondary-color-hsl, 0.08);
                 }
             }
         }
         &:active,
         &.active {
             &::before {
-                background: color(--button-background-rgb, 0.16);
+                background: hslColor(--button-primary-color-hsl, 0.16);
             }
 
             &[destructive] {
                 &::before {
-                    background: color(--button-destructive-rgb, 0.16);
+                    background: hslColor(--button-destructive-color-hsl, 0.16);
                 }
             }
 
             &[inverted] {
                 &::before {
-                    background: color(--button-foreground-rgb, 0.16);
+                    background: hslColor(--button-secondary-color-hsl, 0.16);
                 }
             }
         }
@@ -237,7 +299,7 @@
             &.focus,
             &:active,
             &.active {
-                color: color(--button-disabled-rgb, 0.32);
+                color: hslColor(--button-neutral-color-hsl, 0.32);
                 background: transparent;
 
                 &::before,
@@ -247,7 +309,7 @@
                 }
 
                 &::after {
-                    border: 1px solid color(--button-disabled-rgb, 0.32);
+                    border: 1px solid hslColor(--button-neutral-color-hsl, 0.32);
                 }
             }
         }
