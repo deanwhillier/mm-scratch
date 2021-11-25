@@ -1,3 +1,4 @@
+/*global Popper*/
 (function () {
     const mainMenuButton = document.getElementById('MainMenu');
     const menuContainer = document.getElementById('ChannelMenu');
