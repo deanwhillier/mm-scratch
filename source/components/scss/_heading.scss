@@ -8,6 +8,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    user-select: none;
 
     &.Heading___small {
         font-size: 12px;
@@ -16,7 +17,7 @@
 
     &.Heading___large {
         font-size: 16px;
-        line-height: (20/16);
+        line-height: (24/16);
     }
 
     &.Heading___xlarge {

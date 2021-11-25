@@ -33,7 +33,7 @@ mixin iconButton(props = {}, extraClasses)
                 break;
         }
         var ariaLabel = props.label ? props.label.toLowerCase() : false;
-    button.IconButton(class=[iconButtonClasses, extraClasses] destructive=(props.destructive || false) inverted=(props.inverted || false) compact=(props.compact || false) toggled=(props.toggled || false) disabled=(props.disabled || false) tabindex=(props.disabled ? -1 : false) aria-label=ariaLabel)
+    button.IconButton(id=props.id class=[iconButtonClasses, extraClasses] destructive=(props.destructive || false) inverted=(props.inverted || false) compact=(props.compact || false) toggled=(props.toggled || false) disabled=(props.disabled || false) tabindex=(props.disabled ? -1 : false) aria-label=ariaLabel)
         +icon({glyph: props.iconGlyph, size: iconSize}, iconClasses)
         if props.label
             +label({text: props.label, size: props.size}, labelClasses)

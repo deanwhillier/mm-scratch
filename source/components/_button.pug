@@ -42,7 +42,7 @@ mixin button(props = {}, extraClasses)
             if props.rightIconGlyph
                 +icon({glyph: props.rightIconGlyph, size: iconSize}, iconClasses)
     else
-        button.Button(class=[buttonClasses, extraClasses] destructive=(props.destructive || false) inverted=(props.inverted || false) disabled=(props.disabled || false) tabindex=(props.disabled ? -1 : false) aria-label=ariaLabel)
+        button.Button(type="button" class=[buttonClasses, extraClasses] destructive=(props.destructive || false) inverted=(props.inverted || false) disabled=(props.disabled || false) tabindex=(props.disabled ? -1 : false) aria-label=ariaLabel)
             if props.leftIconGlyph
                 +icon({glyph: props.leftIconGlyph, size: iconSize}, iconClasses)
             +label({text: props.label, size: labelSize}, labelClasses)
