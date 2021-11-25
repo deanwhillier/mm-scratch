@@ -1,8 +1,0 @@
-mixin menu(extraClasses)
-    include ../data/_menu-items
-    include ../data/_sub-menu-items
-    nav.Menu(class=[extraClasses] data-active-menu-depth=1)
-        +menuHeader(menuItems.menuTitle, "Menu_header")
-        div.Menu_panels
-            +menuPanel(menuItems, "Menu_panel___active")
-            +menuPanel(subMenuItems)

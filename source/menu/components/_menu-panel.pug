@@ -1,5 +1,0 @@
-mixin menuPanel(menuData, extraClasses)
-    div.Menu_panel(class=extraClasses)
-        ul.Menu_items
-            each menuItemData in menuData.menuItems
-                +menuItem(menuItemData, "Menu_item")
