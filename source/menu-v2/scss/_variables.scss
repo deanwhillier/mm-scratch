@@ -1,0 +1,9 @@
+// screen width breakpoints
+$width-desktop-large-min: 1600px;
+$width-desktop-small-max: $width-desktop-large-min - 1px;
+$width-desktop-small-min: 1200px;
+$width-tablet-large-max: $width-desktop-small-min - 1px;
+$width-tablet-large-min: 900px;
+$width-tablet-small-max: $width-tablet-large-min - 1px;
+$width-tablet-small-min: 600px;
+$width-mobile-max: $width-tablet-small-min - 1px;

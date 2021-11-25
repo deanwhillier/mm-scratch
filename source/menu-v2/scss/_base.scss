@@ -1,0 +1,22 @@
+:root {
+    --black-rgb: 63, 67, 80;
+    --button-bg-rgb: 28, 88, 217;
+    --destructive-rgb: 210, 75, 78;
+
+    --icon-button-foreground-rgb: 63, 67, 80;
+    --icon-button-background-rgb: 28, 88, 217;
+    --icon-button-highlight-rgb: 255, 255, 255;
+    --icon-button-destructive-rgb: var(--destructive-rgb);
+}
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px;
+    background: white;
+
+    @include media-width($width-tablet-large-min) {
+        padding: 15% 0 0 15%;
+    }
+}

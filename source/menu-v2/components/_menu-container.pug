@@ -1,0 +1,6 @@
+mixin MenuContainer(props = {}, extraClasses)
+    -
+        var menuContainerClasses = {}
+    div.MenuContainer(id=props.id class=[menuContainerClasses, extraClasses])
+        if block
+            block

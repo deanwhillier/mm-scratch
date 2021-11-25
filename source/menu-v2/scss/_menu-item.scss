@@ -1,0 +1,80 @@
+.MenuItem {
+    @include reset-button;
+
+    display: grid;
+    place-items: center start;
+    position: relative;
+    min-height: 36px;
+    line-height: 36px;
+    padding: 0 20px;
+    color: rgba(var(--black-rgb), 1);
+    background: transparent;
+
+    &Wrapper {
+        display: flex;
+        justify-content: space-between;
+        gap: 8px;
+        align-items: center;
+        position: relative;
+        padding: 0;
+        padding-left: 28px;
+        width: 100%;
+    }
+
+    .Icon {
+        color: rgba(var(--black-rgb), 0.56);
+    }
+
+    .MenuItem__Icon {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+
+    &:active,
+    &.active {
+        color: rgba(var(--black-rgb), 1);
+        background: rgba(var(--button-bg-rgb), 0.08);
+
+        .Icon {
+            color: rgba(var(--black-rgb), 0.64);
+        }
+    }
+
+    &:hover {
+        color: rgba(var(--black-rgb), 1);
+        background: rgba(var(--black-rgb), 0.08);
+
+        .Icon {
+            color: rgba(var(--black-rgb), 0.64);
+        }
+    }
+
+    &[destructive] {
+        color: rgba(var(--destructive-rgb), 1);
+
+        .Icon {
+            color: inherit;
+        }
+
+        &:hover {
+            background: rgba(var(--destructive-rgb), 0.08);
+        }
+    }
+
+    // animation
+    transition: color $animation-speed-shorter 0ms ease-in-out,
+        background $animation-speed-shorter 0ms ease-in-out;
+
+    &:hover,
+    &:active {
+        transition: color $animation-speed-shortest 0ms ease-in-out,
+            background $animation-speed-shortest 0ms ease-in-out;
+    }
+
+    @include media-width(null, $width-tablet-small-max) {
+    }
+    @include media-width($width-tablet-large-min) {
+    }
+}

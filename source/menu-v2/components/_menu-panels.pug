@@ -1,0 +1,8 @@
+mixin MenuPanels(props = {}, extraClasses)
+    -
+        var classes = {}
+    |
+    |
+    div.MenuPanels(id=props.id class=[classes, extraClasses])
+        if block
+            block

@@ -1,0 +1,14 @@
+@import '/node_modules/@mattermost/compass-icons/css/compass-icons.css';
+@import '../../scss/shared/variables';
+@import '../../scss/shared/mixins';
+@import '../../scss/shared/typography';
+@import '../../components/scss/components';
+
+@import './variables';
+@import './base';
+@import './menu-container';
+@import './menu-panels';
+@import './menu-panel';
+@import './menu-header';
+@import './menu-group';
+@import './menu-item';

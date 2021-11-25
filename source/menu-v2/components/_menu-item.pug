@@ -1,0 +1,13 @@
+mixin MenuItem(props, extraClasses)
+    -
+        var classes = {}
+    |
+    |
+    button.MenuItem(id=props.id type="button" data-target-panel=props.targetPanelID class=[buttonClasses, extraClasses] destructive=(props.destructive || false))
+        div.MenuItemWrapper
+            if props.glyph
+                +icon({glyph: props.glyph, size: 16}, 'MenuItem__Icon')
+            +label({text: props.text ? props.text : 'Menu Item', size: 'small'})
+            if props.actionGlyph
+                +icon({glyph: props.actionGlyph, size: 16}, 'MenuItem__ActionIcon')
+                

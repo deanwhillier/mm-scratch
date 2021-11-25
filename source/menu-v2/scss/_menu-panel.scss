@@ -1,0 +1,90 @@
+.MenuPanel {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-width: 114px;
+    background: white;
+
+    @include media-width(null, $width-tablet-small-max) {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        padding: 12px 0;
+        width: 100%;
+        max-height: 100%;
+        border-radius: 12px 12px 0 0;
+        box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.12);
+        visibility: hidden;
+        z-index: 1;
+        overflow-y: auto;
+
+        will-change: transform, visibility;
+
+        &:not(:first-child) {
+            transform: translateX(100%);
+        }
+
+        &.open.active {
+            position: relative;
+            transform: translateX(0%);
+            visibility: visible;
+            z-index: 2;
+        }
+
+        &.open:not(.active) {
+            transform: translateX(-100%);
+            visibility: hidden;
+        }
+
+        // animation
+        transition: transform $animation-speed-normal 0ms ease-in-out,
+            visibility $animation-speed-normal 0ms step-end;
+
+        &.open.active {
+            transition: transform $animation-speed-normal 0ms ease-in-out,
+                visibility $animation-speed-normal 0ms step-start;
+        }
+
+        &.open:not(.active) {
+            transition: transform $animation-speed-normal 0ms ease-in-out,
+                visibility $animation-speed-normal 0ms step-end;
+        }
+    }
+    @include media-width($width-tablet-large-min) {
+        padding: 8px 0;
+        max-width: 496px;
+        border-radius: 4px;
+        box-shadow: 0px 0px 1px 1px rgba(var(--black-rgb), 0.16), 0px 6px 14px rgba(0, 0, 0, 0.12);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(-8px);
+        overflow-y: hidden;
+
+        will-change: transform, opacity, visibility;
+
+        & + & {
+            margin-inline-start: -3px;
+        }
+
+        &.open {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
+
+            &.active {
+                overflow-y: auto;
+            }
+        }
+
+        // animation
+        transition: transform $animation-speed-shortest 0ms ease-in-out,
+            opacity $animation-speed-shortest 0ms ease-in-out,
+            visibility $animation-speed-shortest 0ms step-end;
+
+        &.open {
+            transition: transform $animation-speed-shortest 0ms ease-in-out,
+                opacity $animation-speed-shortest 0ms ease-in-out,
+                visibility $animation-speed-shortest 0ms step-start;
+        }
+    }
+}

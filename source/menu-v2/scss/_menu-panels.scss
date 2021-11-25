@@ -1,0 +1,63 @@
+.MenuPanels {
+    display: flex;
+    position: absolute;
+
+    .MenuContainer.open & {
+        pointer-events: none;
+
+        > * {
+            pointer-events: auto;
+        }
+    }
+
+    @include media-width(null, $width-tablet-small-max) {
+        flex-direction: column;
+        justify-content: flex-end;
+        inset: unset !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        width: 100%;
+        height: calc(100% - 80px);
+
+        transform: translateY(100%) !important;
+
+        will-change: transform;
+
+        .MenuContainer.open & {
+            transform: translateY(0%) !important;
+        }
+
+        // animation
+        transition: transform $animation-speed-normal 0ms ease-in;
+
+        .MenuContainer.open & {
+            transition: transform $animation-speed-normal 0ms ease-out;
+        }
+    }
+    @include media-width($width-tablet-large-min) {
+        flex-direction: row;
+        align-items: flex-start;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-8px);
+
+        will-change: opacity, visibility, transform;
+
+        .MenuContainer.open & {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0px);
+        }
+
+        // animation
+        transition: opacity $animation-speed-shortest 0ms ease-in,
+            visibility $animation-speed-shortest 0ms step-end,
+            transform $animation-speed-shortest 0ms ease-in;
+
+        .MenuContainer.open & {
+            transition: opacity $animation-speed-shortest 0ms ease-out,
+                visibility $animation-speed-shortest 0ms step-start,
+                transform $animation-speed-shortest 0ms ease-out;
+        }
+    }
+}
