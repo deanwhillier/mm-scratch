@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Modules</title>
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://yarnpkg.com/en/package/normalize.css"
+        />
+        <link rel="stylesheet" type="text/css" href="./css/main.css" />
+    </head>
+    <body class="modules">
+        <template id="BasicTemplate"><p>This is a test template.</p></template>
+
+        <employee-card name="Web Component">
+            <div slot="id"><b>ID:</b> 238</div>
+            <div slot="job title"><b>Job Title:</b> Database Administrator</div>
+            <div slot="email"><b>Email:</b> lcrystal34@gmail.com</div>
+            <div slot="phone"><b>Phone:</b> 292-856-410</div>
+        </employee-card>
+
+        <button class="button-ellipsis">Testing a really long button and applying ellipsis</button>
+
+        <script src="./js/main-min.js" type="module"></script>
+    </body>
+</html>
