@@ -30,6 +30,12 @@
     }
 }
 
+@mixin reset-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
 @mixin media-width($min, $max: null) {
     @if $min and $max {
         @media screen and (min-width: $min) and (max-width: $max) {

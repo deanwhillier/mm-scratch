@@ -744,88 +744,88 @@
       "oF" : 0,
       "oS" : 0
     },
-    "\/source\/menu-v2\/components\/_menu-container.pug" : {
+    "\/source\/menu\/components\/_menu-container.pug" : {
       "cB" : 0,
       "cOD" : 1,
       "ft" : 512,
       "hM" : 0,
       "oA" : 1,
-      "oAP" : "\/build\/menu-v2\/components\/_menu-container.html",
+      "oAP" : "\/build\/menu\/components\/_menu-container.html",
       "oF" : 0,
       "oS" : 0
     },
-    "\/source\/menu-v2\/components\/_menu-group.pug" : {
+    "\/source\/menu\/components\/_menu-group.pug" : {
       "cB" : 0,
       "cOD" : 1,
       "ft" : 512,
       "hM" : 0,
       "oA" : 1,
-      "oAP" : "\/build\/menu-v2\/components\/_menu-group.html",
+      "oAP" : "\/build\/menu\/components\/_menu-group.html",
       "oF" : 0,
       "oS" : 0
     },
-    "\/source\/menu-v2\/components\/_menu-header.pug" : {
+    "\/source\/menu\/components\/_menu-header.pug" : {
       "cB" : 0,
       "cOD" : 1,
       "ft" : 512,
       "hM" : 0,
       "oA" : 1,
-      "oAP" : "\/build\/menu-v2\/components\/_menu-header.html",
+      "oAP" : "\/build\/menu\/components\/_menu-header.html",
       "oF" : 0,
       "oS" : 0
     },
-    "\/source\/menu-v2\/components\/_menu-item.pug" : {
+    "\/source\/menu\/components\/_menu-item.pug" : {
       "cB" : 0,
       "cOD" : 1,
       "ft" : 512,
       "hM" : 0,
       "oA" : 1,
-      "oAP" : "\/build\/menu-v2\/components\/_menu-item.html",
+      "oAP" : "\/build\/menu\/components\/_menu-item.html",
       "oF" : 0,
       "oS" : 0
     },
-    "\/source\/menu-v2\/components\/_menu-panel.pug" : {
+    "\/source\/menu\/components\/_menu-panel.pug" : {
       "cB" : 0,
       "cOD" : 1,
       "ft" : 512,
       "hM" : 0,
       "oA" : 1,
-      "oAP" : "\/build\/menu-v2\/components\/_menu-panel.html",
+      "oAP" : "\/build\/menu\/components\/_menu-panel.html",
       "oF" : 0,
       "oS" : 0
     },
-    "\/source\/menu-v2\/components\/_menu-panels.pug" : {
+    "\/source\/menu\/components\/_menu-panels.pug" : {
       "cB" : 0,
       "cOD" : 1,
       "ft" : 512,
       "hM" : 0,
       "oA" : 1,
-      "oAP" : "\/build\/menu-v2\/components\/_menu-panels.html",
+      "oAP" : "\/build\/menu\/components\/_menu-panels.html",
       "oF" : 0,
       "oS" : 0
     },
-    "\/source\/menu-v2\/index.pug" : {
+    "\/source\/menu\/index.pug" : {
       "cB" : 0,
       "cOD" : 1,
       "ft" : 512,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/build\/menu-v2\/index.html",
+      "oAP" : "\/build\/menu\/index.html",
       "oF" : 0,
       "oS" : 0
     },
-    "\/source\/menu-v2\/js\/main.js" : {
+    "\/source\/menu\/js\/main.js" : {
       "bF" : 0,
       "ft" : 64,
       "ma" : 1,
       "mi" : 0,
       "oA" : 0,
-      "oAP" : "\/build\/menu-v2\/js\/main-min.js",
+      "oAP" : "\/build\/menu\/js\/main-min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 1
     },
-    "\/source\/menu-v2\/scss\/_base.scss" : {
+    "\/source\/menu\/scss\/_base.scss" : {
       "aP" : 1,
       "bl" : 0,
       "co" : 0,
@@ -834,13 +834,13 @@
       "ft" : 4,
       "ma" : 1,
       "oA" : 1,
-      "oAP" : "\/build\/menu-v2\/css\/_base.css",
+      "oAP" : "\/build\/menu\/css\/_base.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
       "sct" : 1
     },
-    "\/source\/menu-v2\/scss\/_menu-container.scss" : {
+    "\/source\/menu\/scss\/_menu-container.scss" : {
       "aP" : 1,
       "bl" : 0,
       "co" : 0,
@@ -849,13 +849,13 @@
       "ft" : 4,
       "ma" : 1,
       "oA" : 1,
-      "oAP" : "\/build\/menu-v2\/css\/_menu-container.css",
+      "oAP" : "\/build\/menu\/css\/_menu-container.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
       "sct" : 1
     },
-    "\/source\/menu-v2\/scss\/_menu-group.scss" : {
+    "\/source\/menu\/scss\/_menu-group.scss" : {
       "aP" : 1,
       "bl" : 0,
       "co" : 0,
@@ -864,13 +864,13 @@
       "ft" : 4,
       "ma" : 1,
       "oA" : 1,
-      "oAP" : "\/build\/menu-v2\/css\/_menu-group.css",
+      "oAP" : "\/build\/menu\/css\/_menu-group.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
       "sct" : 1
     },
-    "\/source\/menu-v2\/scss\/_menu-header.scss" : {
+    "\/source\/menu\/scss\/_menu-header.scss" : {
       "aP" : 1,
       "bl" : 0,
       "co" : 0,
@@ -879,13 +879,13 @@
       "ft" : 4,
       "ma" : 1,
       "oA" : 1,
-      "oAP" : "\/build\/menu-v2\/css\/_menu-header.css",
+      "oAP" : "\/build\/menu\/css\/_menu-header.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
       "sct" : 1
     },
-    "\/source\/menu-v2\/scss\/_menu-item.scss" : {
+    "\/source\/menu\/scss\/_menu-item.scss" : {
       "aP" : 1,
       "bl" : 0,
       "co" : 0,
@@ -894,13 +894,13 @@
       "ft" : 4,
       "ma" : 1,
       "oA" : 1,
-      "oAP" : "\/build\/menu-v2\/css\/_menu-item.css",
+      "oAP" : "\/build\/menu\/css\/_menu-item.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
       "sct" : 1
     },
-    "\/source\/menu-v2\/scss\/_menu-panel.scss" : {
+    "\/source\/menu\/scss\/_menu-panel.scss" : {
       "aP" : 1,
       "bl" : 0,
       "co" : 0,
@@ -909,13 +909,13 @@
       "ft" : 4,
       "ma" : 1,
       "oA" : 1,
-      "oAP" : "\/build\/menu-v2\/css\/_menu-panel.css",
+      "oAP" : "\/build\/menu\/css\/_menu-panel.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
       "sct" : 1
     },
-    "\/source\/menu-v2\/scss\/_menu-panels.scss" : {
+    "\/source\/menu\/scss\/_menu-panels.scss" : {
       "aP" : 1,
       "bl" : 0,
       "co" : 0,
@@ -924,13 +924,13 @@
       "ft" : 4,
       "ma" : 1,
       "oA" : 1,
-      "oAP" : "\/build\/menu-v2\/css\/_menu-panels.css",
+      "oAP" : "\/build\/menu\/css\/_menu-panels.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
       "sct" : 1
     },
-    "\/source\/menu-v2\/scss\/_variables.scss" : {
+    "\/source\/menu\/scss\/_variables.scss" : {
       "aP" : 1,
       "bl" : 0,
       "co" : 0,
@@ -939,13 +939,13 @@
       "ft" : 4,
       "ma" : 1,
       "oA" : 1,
-      "oAP" : "\/build\/menu-v2\/css\/_variables.css",
+      "oAP" : "\/build\/menu\/css\/_variables.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
       "sct" : 1
     },
-    "\/source\/menu-v2\/scss\/main.scss" : {
+    "\/source\/menu\/scss\/main.scss" : {
       "aP" : 1,
       "bl" : 0,
       "co" : 0,
@@ -954,7 +954,7 @@
       "ft" : 4,
       "ma" : 1,
       "oA" : 0,
-      "oAP" : "\/build\/menu-v2\/css\/main.css",
+      "oAP" : "\/build\/menu\/css\/main.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -1286,7 +1286,7 @@
     "displayValueWasSetByUser" : 0,
     "iconImageName" : "brackets-cafe",
     "iconImageWasSetByUser" : 0,
-    "lastBuiltDate" : 659558758.85230398
+    "lastBuiltDate" : 659596282.99434996
   },
   "projectSettings" : {
     "abortBuildOnError" : 1,
