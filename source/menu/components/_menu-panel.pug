@@ -3,6 +3,6 @@ mixin MenuPanel(props = {}, extraClasses)
         var classes = {}
     |
     |
-    div.MenuPanel(id=props.id class=[classes, extraClasses])
+    ul.MenuPanel(id=props.id class=[classes, extraClasses] role='menu')
         if block
             block

@@ -1,6 +1,15 @@
 .MenuGroup {
+    @include reset-list;
+
     display: flex;
     flex-direction: column;
+
+    > ul {
+        @include reset-list;
+
+        display: flex;
+        flex-direction: column;
+    }
 
     & + & {
         &::before {

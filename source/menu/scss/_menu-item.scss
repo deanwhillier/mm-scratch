@@ -1,24 +1,27 @@
 .MenuItem {
-    @include reset-button;
+    @include reset-list;
 
     display: grid;
     place-items: center start;
     position: relative;
-    min-height: 36px;
-    line-height: 36px;
-    padding: 0 20px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
     color: rgba(var(--black-rgb), 1);
     background: transparent;
 
     &Wrapper {
+        @include reset-button;
+
         display: flex;
         justify-content: space-between;
         gap: 8px;
         align-items: center;
         position: relative;
-        padding: 0;
-        padding-left: 28px;
+        padding: 0 20px 0 48px;
         width: 100%;
+        min-height: 36px;
+        line-height: 36px;
     }
 
     .Icon {
@@ -28,7 +31,7 @@
     .MenuItem__Icon {
         position: absolute;
         top: 50%;
-        left: 0;
+        left: 20px;
         transform: translateY(-50%);
     }
 
@@ -51,7 +54,7 @@
         }
     }
 
-    &[destructive] {
+    &[data-destructive] {
         color: rgba(var(--destructive-rgb), 1);
 
         .Icon {

@@ -1,4 +1,6 @@
 .MenuPanels {
+    @include reset-list;
+
     display: flex;
     position: absolute;
 

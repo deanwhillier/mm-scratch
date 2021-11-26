@@ -3,9 +3,9 @@ html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport" content="width=device-width, initial-scale=1.0")
-        title Menu v2
-        link(rel="stylesheet" type="text/css" href="/build/menu-v2/css/main.css")
-    body(class=["poc-menu-v2", "enable-animations"])
+        title Menu
+        link(rel="stylesheet" type="text/css" href="./css/main.css")
+    body(class=["poc-menu", "enable-animations"])
         include ../components/_components
         include components/_menu-container
         include components/_menu-panels
@@ -14,7 +14,7 @@ html(lang="en")
         include components/_menu-group
         include components/_menu-item
         
-        +iconButton({id: 'MainMenu', iconGlyph: 'icon-menu', size: 'medium'})
+        +iconButton({id: 'MainMenu', iconGlyph: 'icon-menu', size: 'small'})
         
         +MenuContainer({id: 'ChannelMenu'})
             +MenuPanels({id: 'ChannelMenuPanels'})
@@ -87,5 +87,5 @@ html(lang="en")
                     +MenuGroup()
                         +MenuItem({glyph: 'icon-folder-plus-outline'})
         
-        script(src="https://unpkg.com/@popperjs/core@2" type="text/javascript")
-        script(src="/build/menu-v2/js/main-min.js" type="text/javascript")
+        script(src="https://unpkg.com/@popperjs/core@2")
+        script(src="./js/main-min.js")

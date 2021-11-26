@@ -21,6 +21,7 @@
 
     let menuIsOpen = false;
     const setMenuIsOpen = (value) => {
+        mainMenuButton.classList[value ? 'add' : 'remove']('active');
         menuIsOpen = value;
     };
     setMenuIsOpen(menuContainer.classList.contains('open'));

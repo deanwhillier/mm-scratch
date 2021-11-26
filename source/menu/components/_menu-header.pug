@@ -1,6 +1,6 @@
 mixin MenuHeader(props = {}, extraClasses)
     -
-    div.MenuHeader(id=props.id)
+    li.MenuHeader(id=props.id)
         div.MenuHeaderWrapper
             if props.enableBackButton
                 +iconButton({size: 'small', iconGlyph: 'icon-arrow-back-ios'}, 'MenuHeader__backButton')

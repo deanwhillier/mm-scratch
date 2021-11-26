@@ -1,5 +1,7 @@
 .MenuHeader {
     @include media-width(null, $width-tablet-small-max) {
+        @include reset-list;
+
         display: flex;
         flex-direction: column;
         justify-content: space-between;
