@@ -15,7 +15,7 @@
         line-height: 1;
     }
 
-    &[size='12'] {
+    &[data-size='12'] {
         padding: 0;
         width: 12px;
         height: 12px;
@@ -26,7 +26,7 @@
             line-height: 1;
         }
     }
-    &[size='16'] {
+    &[data-size='16'] {
         padding: 0;
         width: 16px;
         height: 16px;
@@ -37,7 +37,7 @@
             line-height: 1;
         }
     }
-    &[size='20'] {
+    &[data-size='20'] {
         padding: 0;
         width: 20px;
         height: 20px;
@@ -48,7 +48,7 @@
             line-height: 1;
         }
     }
-    &[size='28'] {
+    &[data-size='28'] {
         padding: 0;
         width: 28px;
         height: 28px;

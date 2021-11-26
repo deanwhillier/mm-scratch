@@ -6,28 +6,28 @@
     overflow: hidden;
     user-select: none;
 
-    &.Label___xsmall {
+    &.Label__xsmall {
         font-size: 12px;
         line-height: 16px;
     }
 
-    &.Label___small {
+    &.Label__small {
         font-size: 14px;
         line-height: 18px;
     }
 
     &,
-    &.Label___medium {
+    &.Label__medium {
         font-size: 16px;
         line-height: 20px;
     }
 
-    &.Label___large {
+    &.Label__large {
         font-size: 18px;
         line-height: 22px;
     }
 
-    &.Label___wrap {
+    &.Label__wrap {
         white-space: normal;
     }
 
